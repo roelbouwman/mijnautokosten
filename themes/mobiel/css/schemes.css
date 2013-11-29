@@ -1,0 +1,49 @@
+/*   
+Theme Name: Simple Mobile
+Scheme Name: Black-Orange
+*/
+
+/* === LOGO === */
+#logo a:hover {
+  color: #E08C07;
+}
+
+/* === MENU === */
+#menu ul {
+  list-style-image: url(../images/list-image.png);
+}
+
+/* === FOOTER === */
+#footer .copyright {
+  color: #9B4500;
+}
+
+/* === CUSTOM === */
+.hr {
+  background: #352412;
+}
+
+/* === STYLES === */
+a {
+  color: #E08C07;
+}
+a:hover {
+  color: #E6A407;
+}
+blockquote {
+  background-image: url(../images/quote-begin.png);
+}
+blockquote div.quote-end {
+  background-image: url(../images/quote-end.png);
+}
+table {
+  border-color: #352412;
+}
+td, th {
+  border-color: #352412;
+}
+  
+/* === WP STYLES === */
+#wp-calendar #today {
+  background: #352412;
+}
