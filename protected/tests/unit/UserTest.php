@@ -91,6 +91,24 @@ class UserTest extends CDbTestCase
     
     /**
      * 
+     * Gebruiker van de app ophalen
+     */
+    public function testGetUser()
+    {
+    	$model=User::model()->findByPk(1);
+    	try {
+    		$model->getUser();	
+    	} catch (Exception $e) {
+    	}
+    	Yii::app()->user->id=1;
+    	$model=User::model()->findByPk(1);
+    	$model->getUser();
+    	
+    	$this->assertTrue($model->username=='tester');
+    }
+    
+    /**
+     * 
      * dummy methode voor 100% coverage
      */
 	public function testSearch()
