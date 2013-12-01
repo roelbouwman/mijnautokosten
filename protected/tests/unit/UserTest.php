@@ -95,6 +95,7 @@ class UserTest extends CDbTestCase
      */
     public function testGetUser()
     {
+    	    	
     	$model=User::model()->findByPk(1);
     	try {
     		$model->getUser();	
@@ -103,7 +104,7 @@ class UserTest extends CDbTestCase
     	Yii::app()->user->id=1;
     	$model=User::model()->findByPk(1);
     	$model->getUser();
-    	
+    	    	 
     	$this->assertTrue($model->username=='tester');
     }
     

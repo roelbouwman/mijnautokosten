@@ -9,3 +9,4 @@ require_once( Yii::getPathOfAlias('system.test.CTestCase').'.php' );
 require_once(dirname(__FILE__).'/WebTestCase.php');
 
 Yii::createWebApplication($config);
+

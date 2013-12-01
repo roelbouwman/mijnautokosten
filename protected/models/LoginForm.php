@@ -37,7 +37,7 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			'rememberMe'=>'Onthoud mij!',
-			'username'=>'Gerbuikersnaam',
+			'username'=>'Gebruikersnaam',
 			'password'=>'Wachtwoord',
 		);
 	}
@@ -61,7 +61,7 @@ class LoginForm extends CFormModel
 	 * @return boolean whether login is successful
 	 */
 	public function login()
-	{
+	{	
 		if($this->_identity===null)
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);

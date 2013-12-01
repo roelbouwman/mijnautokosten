@@ -243,6 +243,7 @@ class Auto extends CActiveRecord
 	 */
 	public function getUserAuto()
 	{
+		
 		//TODO:refactor to english
 		if(Yii::app()->user->id!=null)
 		{
@@ -264,6 +265,8 @@ class Auto extends CActiveRecord
 			
 			return $auto;
 		} else {
+			//TODO: error gelogd...
+			Yii::log("Er is iets vreselijk mis gegaan!", "error");
 			throw new CHttpException(404,'Er is iets vreselijk mis gegaan!');
 		}
 		
