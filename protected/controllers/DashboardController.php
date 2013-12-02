@@ -4,6 +4,16 @@ class DashboardController extends Controller
 {
 	public function actionIndex()
 	{
+		
+		if(isset($_POST['car_name']))
+		{
+			$param_car = (int)$_POST['car_name'];
+			if($param_car!="")
+			{ 
+				Auto::setMainCar($param_car);
+			}
+		}
+		
 		$this->render('index');
 	}
 	
@@ -18,6 +28,7 @@ class DashboardController extends Controller
 		);
 	}
 	
+		
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.

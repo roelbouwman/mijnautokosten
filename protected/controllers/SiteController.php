@@ -29,12 +29,6 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		if(isset($_POST['car_name']))
-		{
-		$param_car = (int)$_POST['car_name'];
-				
-		Auto::setMainCar($param_car);	
-		}
 		
 		$this->render('index');
 	}

@@ -1,5 +1,7 @@
 <?php
-/* @var $auto Auto */
+/* @var $this DashboardController */
+/* @var $model Auto */
+/* @var $form CActiveForm */
 
 $this->pageTitle = Yii::app()->name . " " . $auto->merk;
 ?>
@@ -31,7 +33,7 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 	<tr>
     	<td>    	
     	<?php $form=$this->beginWidget('CActiveForm', array(
-        	'id'=>'car_form',
+        	'id'=>'auto-form',
         	'enableAjaxValidation'=>false,
 			));
 		?>
@@ -39,13 +41,7 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
 		 wijzig hoofdauto: 
 	    <?php
 	        $cars = CHtml::listData(Auto::getUserAutos(),'idtbl_auto', 'type', 'merk');
-
-	        //$cars[]='Kies een auto';
-	        
-	        //foreach ($list as &$value) {
-    		//	$cars[] = $value;
-			//}
-	        
+	         
 	        echo CHtml::dropDownList('car_name', '', $cars, array('prompt'=>'Maak een keuze'));
 	        echo CHtml::submitButton("ok");
 	    ?>
