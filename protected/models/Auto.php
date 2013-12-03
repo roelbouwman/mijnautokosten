@@ -198,7 +198,7 @@ class Auto extends CActiveRecord
 	 */
 	public function getMonths($date1, $date2)
 	{
-		if($date1==''||$date1=='01-01-1970')
+		if($date1==''||$date1=='01-01-1970'||$date1==null)
 		{
 			$date1=date("d-m-Y");
 		}

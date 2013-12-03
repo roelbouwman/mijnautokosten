@@ -74,8 +74,8 @@ $this->endWidget('zii.widgets.jui.CJuiDialog');
     	//these variables are used in the highchartswidget also
     	$totaalTanken = Tankbeurt::model()->totaalTankbeurten($auto->idtbl_auto);
         $totaalOnderhoud = Onderhoud::model()->totaalOnderhoud($auto->idtbl_auto);
-        $belasting = Auto::getMonths(date("d-m-Y"), $auto->aanschaf) * $auto->wegenbelasting;
-        $verzekering = Auto::getMonths(date("d-m-Y"), $auto->aanschaf) * $auto->verzekering;
+        $belasting = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->wegenbelasting;
+        $verzekering = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->verzekering;
     	$knPerMaand = $totaalTanken + $totaalOnderhoud + $belasting + $verzekering;
     	
 //$columnsArray = array('id','name','lastname','tel','email');
