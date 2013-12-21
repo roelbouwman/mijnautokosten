@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2013-12-16T22:08:20" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
+<XMI verified="false" xmi.version="1.2" timestamp="2013-12-21T16:54:12" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://uml.sf.net</XMI.exporter>
@@ -78,23 +78,45 @@
            <endpoint endx="180" endy="100"/>
           </linepath>
          </assocwidget>
-         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="0" widgetbid="GEHBsYQa4BS5" indexb="1" linewidth="none" usesdiagramusefillcolor="0" totalcounta="2" totalcountb="2" widgetaid="kVnt1DrP1lob" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="177" fillcolor="#000000" changeabilityA="900" changeabilityB="900" documentation="" type="515">
+         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="0" widgetbid="GEHBsYQa4BS5" indexb="1" linewidth="none" usesdiagramusefillcolor="0" totalcounta="2" totalcountb="2" widgetaid="kVnt1DrP1lob" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="1" fillcolor="#000000" changeabilityA="900" changeabilityB="900" documentation="" type="515">
           <linepath>
            <startpoint startx="360" starty="340"/>
            <endpoint endx="180" endy="260"/>
            <point x="180" y="340"/>
           </linepath>
          </assocwidget>
-         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="0" widgetbid="OquQaFr4FQlE" indexb="1" linewidth="none" usesdiagramusefillcolor="0" totalcounta="2" totalcountb="2" widgetaid="g3jcJjLUsSEy" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="16" fillcolor="#000000" changeabilityA="900" changeabilityB="900" documentation="" type="515">
+         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="0" widgetbid="OquQaFr4FQlE" indexb="1" linewidth="none" usesdiagramusefillcolor="0" totalcounta="2" totalcountb="2" widgetaid="g3jcJjLUsSEy" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="1" fillcolor="#000000" changeabilityA="900" changeabilityB="900" documentation="" type="515">
           <linepath>
            <startpoint startx="190" starty="180"/>
            <endpoint endx="360" endy="180"/>
           </linepath>
          </assocwidget>
-         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="231" widgetbid="sOWFQzDp81GK" indexb="1" linewidth="none" usesdiagramusefillcolor="9" totalcounta="2" totalcountb="2" widgetaid="kVnt1DrP1lob" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="64" fillcolor="none" changeabilityA="900" changeabilityB="900" documentation="" type="515">
+         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="1" widgetbid="sOWFQzDp81GK" indexb="1" linewidth="none" usesdiagramusefillcolor="1" totalcounta="2" totalcountb="2" widgetaid="kVnt1DrP1lob" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="1" fillcolor="none" changeabilityA="900" changeabilityB="900" documentation="" type="515">
           <linepath>
            <startpoint startx="370" starty="350"/>
            <endpoint endx="370" endy="420"/>
+          </linepath>
+         </assocwidget>
+        </associations>
+       </diagram>
+       <diagram showopsig="1" linecolor="#ff0000" snapx="10" showattribassocs="1" snapy="10" linewidth="0" showattsig="1" isopen="1" showpackage="1" showpubliconly="1" showstereotype="1" name="AD keuzemenu" font="DejaVu Sans,9,-1,0,50,0,0,0,0,0" canvasheight="582" canvaswidth="1027" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#000000" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff00" zoom="100" xmi.id="4i7csNPtRLkA" documentation="" showscope="1" snapgrid="0" showatts="1" type="6">
+        <widgets>
+         <activitywidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="367" showstereotype="1" y="43" font="DejaVu Sans,9,-1,0,50,0,0,0,0,0" width="15" isinstance="0" usefillcolor="1" fillcolor="none" activityname="" xmi.id="NggL7JiebvnL" postcondition="" documentation="" activitytype="0" height="15" precondition=""/>
+         <activitywidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="314" showstereotype="1" y="203" font="DejaVu Sans,9,-1,0,50,0,0,0,0,0" width="154" isinstance="0" usefillcolor="1" fillcolor="none" activityname="SC01 maak een keuze" xmi.id="gEZ7XHGuyuD3" postcondition="" documentation="" activitytype="1" height="24" precondition=""/>
+         <activitywidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" usesdiagramusefillcolor="1" x="363" showstereotype="1" y="359" font="DejaVu Sans,9,-1,0,50,0,0,0,0,0" width="15" isinstance="0" usefillcolor="1" fillcolor="none" activityname="" xmi.id="DvhmoS5H8teK" postcondition="" documentation="" activitytype="2" height="15" precondition=""/>
+        </widgets>
+        <messages/>
+        <associations>
+         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="0" widgetbid="gEZ7XHGuyuD3" indexb="1" linewidth="none" usesdiagramusefillcolor="0" totalcounta="2" totalcountb="2" widgetaid="NggL7JiebvnL" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="0" fillcolor="#000000" changeabilityA="900" changeabilityB="900" documentation="" type="515">
+          <linepath>
+           <startpoint startx="367" starty="58"/>
+           <endpoint endx="367" endy="203"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget indexa="1" roleBdoc="" linecolor="none" usesdiagramfillcolor="181" widgetbid="DvhmoS5H8teK" indexb="1" linewidth="none" usesdiagramusefillcolor="9" totalcounta="2" totalcountb="2" widgetaid="gEZ7XHGuyuD3" roleAdoc="" visibilityA="0" visibilityB="0" usefillcolor="152" fillcolor="none" changeabilityA="900" changeabilityB="900" documentation="" type="515">
+          <linepath>
+           <startpoint startx="363" starty="227"/>
+           <endpoint endx="363" endy="359"/>
           </linepath>
          </assocwidget>
         </associations>
@@ -219,7 +241,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="I4JqrsRw2lNQ" uniqueid="ZBJ8EeJzzuss" documentation=""/>
+  <docsettings viewid="4i7csNPtRLkA" uniqueid="DvhmoS5H8teK" documentation=""/>
   <listview>
    <listitem open="1" type="800" id="Views">
     <listitem open="1" type="821" id="Component View"/>
@@ -227,6 +249,7 @@
     <listitem open="1" type="836" id="Entity Relationship Model"/>
     <listitem open="1" type="801" id="Logical View">
      <listitem open="0" type="809" id="U0bjzjv5JeK9" label="AD inloggen"/>
+     <listitem open="0" type="809" id="4i7csNPtRLkA" label="AD keuzemenu"/>
      <listitem open="0" type="830" id="Datatypes">
       <listitem open="1" type="829" id="JcMdL6LLFc0l"/>
       <listitem open="1" type="829" id="dt5sezWDsmwX"/>
