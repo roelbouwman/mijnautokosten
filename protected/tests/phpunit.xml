@@ -1,0 +1,23 @@
+<phpunit bootstrap="bootstrap.php"
+		colors="false"
+		convertErrorsToExceptions="true"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true"
+		stopOnFailure="false">
+
+	<selenium>
+		<!-- <browser name="Internet Explorer" browser="*iexplore" /> -->
+		<!-- <browser name="Firefox" browser="*firefox" /> -->
+	</selenium>
+
+<filter>
+  <blacklist>
+    <directory suffix=".php">/var/www/yii</directory>
+   
+      </blacklist>
+  <whitelist addUncoveredFilesFromWhitelist="true">
+    <directory suffix=".php">/var/www/autokosten/protected/models</directory>
+    <!-- <directory suffix=".php">/var/www/autokosten/protected/controllers</directory>  -->
+  </whitelist>
+</filter>
+</phpunit>
