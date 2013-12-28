@@ -15,3 +15,4 @@ installeren
 - plaats de directory "autokosten" in de webroot folder (bijvoorbeeld /var/www/)
 - lees het bestand /var/www/autokosten/protected/data/autokostenMySQL.sql in de database in
 
+-dus
