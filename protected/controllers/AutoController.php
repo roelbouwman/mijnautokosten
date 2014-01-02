@@ -145,6 +145,7 @@ class AutoController extends Controller
 		));
 	}
 
+
 	/**
 	 * Manages all models.
 	 */

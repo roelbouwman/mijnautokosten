@@ -7,6 +7,7 @@ $this->pageTitle=Yii::app()->name . ' - Inloggen';
 $this->breadcrumbs=array(
 	'Login',
 );
+
 ?>
 
 <h1>Inloggen</h1>

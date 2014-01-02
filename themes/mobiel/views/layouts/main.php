@@ -45,33 +45,20 @@
       <div class="hr"></div> 
  
       <!-- BEGIN NAVIGATION & SEARCH --> 
-      <div id="navigation"> 
-        <a title="Navigate" id="navigate" class="button normal"> 
-          <span class="before"></span> 
-          Menu <img src="<?php echo Yii::app()->theme->baseUrl ?>/images/down.png" alt="" /> 
-          <span class="after"></span> 
-        </a> 
-      </div>
+     
        
       <!-- END NAVIGATION & SEARCH --> 
  
       <!-- BEGIN MENU --> 
-    <div id="menu">
-        <?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'Auto', 'url'=>array('/auto/index')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-    </div>
+   
       <!-- END MENU--> 
  
       <div class="hr bold"></div> 
  
         <div id="content">
-            <?php echo $content ?> 
+        	
+            <?php echo $content ?>
+             
         </div>
 
     <div class="hr bold"></div> 

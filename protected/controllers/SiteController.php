@@ -34,6 +34,30 @@ class SiteController extends Controller
 	}
 	
 	/**
+	 * This is the default 'menu' action that is invoked
+	 * 
+	 */
+	public function actionMenu()
+	{
+		$id = Yii::app()->user->id;
+		
+		$criteria = new CDbCriteria();
+		$criteria->addSearchCondition('tbl_user_idtbl_user', $id, false);
+		
+		$dataProvider=new CActiveDataProvider('Auto', array(
+				'criteria'=>$criteria,
+				'pagination'=>array(
+						'pageSize'=>3,
+				),
+		));
+		
+		//$dataProvider=new CActiveDataProvider('Auto');
+		$this->render('menu',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	/**
 	 * This is the action to handle external exceptions.
 	 */
 	public function actionError()
@@ -73,27 +97,7 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
-	/**
-	 * Displays the android login page
-	 */
-	public function actionAndroidlogin()
-	{
-		$model=new LoginForm;
-	
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the android page if valid
-			if($model->validate() && $model->login())
-			{
-				$this->render('android',array('model'=>$model));
-			}
-				
-		}
 		
-	}
-	
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
