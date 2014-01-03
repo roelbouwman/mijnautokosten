@@ -16,6 +16,15 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php
+	        $cars = CHtml::listData(Auto::getUserAutos(),'idtbl_auto', 'type', 'merk');
+	        echo $form->dropDownList($model, 'tbl_auto_idtbl_auto', $cars, array('class'=>'button normal'));
+	    ?>
+	    <br>
+	    <br><br>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'datum'); ?><br>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 				'model'=>$model,
@@ -63,7 +72,7 @@
 	
 	<div class="row buttons">
 		<br>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Maak' : 'Bewaar', array('class'=>'button normal')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'OK' : 'Bewaar', array('class'=>'button normal')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

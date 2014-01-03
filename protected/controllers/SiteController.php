@@ -34,30 +34,6 @@ class SiteController extends Controller
 	}
 	
 	/**
-	 * This is the default 'menu' action that is invoked
-	 * 
-	 */
-	public function actionMenu()
-	{
-		$id = Yii::app()->user->id;
-		
-		$criteria = new CDbCriteria();
-		$criteria->addSearchCondition('tbl_user_idtbl_user', $id, false);
-		
-		$dataProvider=new CActiveDataProvider('Auto', array(
-				'criteria'=>$criteria,
-				'pagination'=>array(
-						'pageSize'=>3,
-				),
-		));
-		
-		//$dataProvider=new CActiveDataProvider('Auto');
-		$this->render('menu',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-	
-	/**
 	 * This is the action to handle external exceptions.
 	 */
 	public function actionError()

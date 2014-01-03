@@ -31,7 +31,7 @@
     <div id="wrapper"> 
  
       <!-- BEGIN LOGO --> 
-      <a id="logo" href="" title="<?php echo Yii::app()->name ?>"> 
+      <a id="logo" href="index.php?r=site/index" title="<?php echo Yii::app()->name ?>"> 
         <img src="<?php echo Yii::app()->theme->baseUrl ?>/images/logo.png" alt="Simple Mobile" /> 
       </a>
       <!-- END LOGO --> 

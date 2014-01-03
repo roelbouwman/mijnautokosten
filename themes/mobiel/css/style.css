@@ -22,12 +22,22 @@ body {
   line-height: 22px;
 }
 input[type="text"] { 
-	width: 250px;
+	width: 285px;
 	height: 50px;
 	font-size: 24px;
 }
 input[type="password"] { 
-	width: 250px;
+	width: 285px;
+	height: 50px;
+	font-size: 24px;
+}
+input[type="checkbox"]{
+	width: 50px;
+	height: 50px;
+	font-size: 24px;
+}	
+select{
+	width: 285px;
 	height: 50px;
 	font-size: 24px;
 }
@@ -275,14 +285,16 @@ input[type="password"] {
 .button {
   background-image: url(../images/button.png);
   color: #262626;
-  font-size: 19px;
   text-shadow: 0 1px 0 #D8D8D8;
   line-height: 34px;
   display: block;
   position: relative;
   float: left;
   padding: 0 10px;
-  height: 34px;
+  width: 285px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
 }
 a.button {
   cursor: pointer;

@@ -33,7 +33,7 @@ class OnderhoudController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create', 'update', 'delete'),
+				'actions'=>array('create', 'createMobiel', 'update', 'delete'),
 				'roles'=>array('leden'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -83,6 +83,32 @@ class OnderhoudController extends Controller
 		));
 	}
 
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionCreateMobiel()
+	{
+		$model=new Onderhoud;
+		//$model->tbl_auto_idtbl_auto=$id;
+		
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Onderhoud']))
+		{
+			$model->attributes=$_POST['Onderhoud'];
+			if($model->save())
+				$this->redirect(array('site/index'));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+			//'auto'=>Auto::model()->findByPk($id),
+		));
+	}
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

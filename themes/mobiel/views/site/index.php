@@ -1,13 +1,15 @@
 <?php
 /* @var $this SiteController */
-
-//de returnurl zetten zodat na inloggen meteen het menu geopend wordt
-Yii::app()->user->returnUrl="index.php?r=site/menu";
-$this->redirect(Yii::app()->user->returnURL);
-
 ?>
 
-
+Maak een keuze uit het menu:
+<br />
+<br />
+<a href="?r=tankbeurt/createMobiel" class="button">Tankbeurt</a>
+<br />
+<br />
+<br />
+<a href="?r=onderhoud/createMobiel" class="button">Onderhoud</a>
 
 
 

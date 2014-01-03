@@ -32,7 +32,7 @@ class TankbeurtController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create', 'update', 'delete'),
+				'actions'=>array('create','createMobiel', 'update', 'delete'),
 				'roles'=>array('leden'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -92,11 +92,12 @@ class TankbeurtController extends Controller
 	 * Creates a new model for input from the android app.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionAndroidcreate($id)
+	public function actionCreateMobiel()
 	{
 		$model=new Tankbeurt;
-		
-		$model->tbl_auto_idtbl_auto=$id;
+				
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
 				
 		if(isset($_POST['Tankbeurt']))
 		{
@@ -104,13 +105,15 @@ class TankbeurtController extends Controller
 			
 			//business logic, berekenen van de prijs
 			$model->totaal=$model->literprijs*$model->liters;
-			$model->save();
-			
-			$this->render('view',array(
-					'model'=>$model,
-			));
-			
+						
+			if($model->save())
+				$this->redirect(array('site/index'));
 		}
+
+		$this->render('create',array(
+			'model'=>$model,
+			//'auto'=>Auto::model()->findByPk($id),
+		));
 		
 	}
 	
