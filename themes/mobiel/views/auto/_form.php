@@ -85,9 +85,7 @@
 				'dateFormat'=>'dd-mm-yy',
         		'showAnim'=>'fold',
     			),
-    			'htmlOptions'=>array(
-        		'style'=>'height:20px;'
-    			),
+    			
 		));
 		?>
 		<?php echo $form->error($model,'aanschaf'); ?>
@@ -101,7 +99,8 @@
 	 -->
 	 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Aanmaken' : 'Bewaren', array('class'=>'button2')); ?>
+		<br>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Aanmaken' : 'Bewaren', array('class'=>'button')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

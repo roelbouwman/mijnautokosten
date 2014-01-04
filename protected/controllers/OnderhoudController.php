@@ -90,9 +90,12 @@ class OnderhoudController extends Controller
 	 */
 	public function actionCreateMobiel()
 	{
-		$model=new Onderhoud;
-		//$model->tbl_auto_idtbl_auto=$id;
+		if(Auto::getUserAuto()==NULL){
+			$this->redirect(array('site/page&view=geenauto'));
+		}
 		
+		$model=new Onderhoud;
+				
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

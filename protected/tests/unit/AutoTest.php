@@ -76,7 +76,7 @@
     	$this->assertTrue($months==2);
 		//false scenario
     	$months=Auto::model()->getMonths('','1-1-2000');
-    	$this->assertTrue($months==165);
+    	$this->assertTrue($months>165);
     }
     
 	/**

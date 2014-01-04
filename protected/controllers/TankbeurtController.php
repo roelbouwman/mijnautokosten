@@ -94,6 +94,10 @@ class TankbeurtController extends Controller
 	 */
 	public function actionCreateMobiel()
 	{
+		if(Auto::getUserAuto()==NULL){
+			$this->redirect(array('site/page&view=geenauto'));
+		}
+		
 		$model=new Tankbeurt;
 				
 		// Uncomment the following line if AJAX validation is needed

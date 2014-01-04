@@ -10,7 +10,10 @@ Maak een keuze uit het menu:
 <br />
 <br />
 <a href="?r=onderhoud/createMobiel" class="button">Onderhoud</a>
-
+<br />
+<br />
+<br />
+<a href="?r=auto/create" class="button">Auto</a>
 
 
 
