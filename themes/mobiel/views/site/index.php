@@ -14,6 +14,12 @@ Maak een keuze uit het menu:
 <br />
 <br />
 <a href="?r=auto/create" class="button">Auto</a>
-
-
-
+<br />
+<br />
+<br />
+<?php 
+if(Yii::app()->user->id!=null){
+	echo "<a href='?r=site/logout' class='button'>Logout</a>";
+}
+?>
+<br />
