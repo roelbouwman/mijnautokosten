@@ -1,11 +1,9 @@
-CREATE DATABASE autokosten;
-
-USE autokosten; 
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
+CREATE SCHEMA IF NOT EXISTS `autokosten` DEFAULT CHARACTER SET utf8 ;
+USE `autokosten` ;
 
 -- -----------------------------------------------------
 -- Table `autokosten`.`tbl_user`
@@ -16,6 +14,7 @@ CREATE  TABLE IF NOT EXISTS `autokosten`.`tbl_user` (
   `password` VARCHAR(128) NULL ,
   `salt` VARCHAR(128) NULL ,
   `email` VARCHAR(128) NULL ,
+  `roles` VARCHAR(128) NULL ,
   PRIMARY KEY (`idtbl_user`) )
 ENGINE = InnoDB;
 
@@ -37,6 +36,8 @@ CREATE  TABLE IF NOT EXISTS `autokosten`.`tbl_auto` (
   `afschrijving` FLOAT NULL ,
   `tbl_user_idtbl_user` INT NOT NULL ,
   `aanschaf` DATE NULL ,
+  `hoofdauto` INT NULL DEFAULT 0 ,
+  `afschaf` DATE NULL ,
   PRIMARY KEY (`idtbl_auto`) ,
   INDEX `fk_tbl_auto_tbl_user` (`tbl_user_idtbl_user` ASC) ,
   CONSTRAINT `fk_tbl_auto_tbl_user`
@@ -98,3 +99,4 @@ GRANT ALL PRIVILEGES
        TO 'www-data'@'localhost'
        IDENTIFIED BY 'www-data' 
        WITH GRANT OPTION;
+

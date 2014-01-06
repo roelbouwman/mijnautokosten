@@ -12,8 +12,6 @@ $this->breadcrumbs=array(
 
 <h1>Inloggen</h1>
 
-<p>Vul hier je credentials in:</p>
-
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
@@ -37,20 +35,15 @@ $this->breadcrumbs=array(
 		<?php $form->error($model,'password'); ?>
 		
 	</div>
-
-	<div class="row">
-		<?php CHtml::link('Nieuwe gebruiker?',array('user/create'));	?>
+	
+	<div class="row buttons">
+		<br>
+		<?php echo CHtml::submitButton('Login', array('class'=>'button')); ?>
+		<br>
+		Nieuwe gebruiker? Tik op knop hieronder:
+		<br>
+		<a href="?r=user/create" class="button">Nieuwe gebruiker?</a>
 	</div>
 	
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php $form->error($model,'rememberMe'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login', array('class'=>'button normal')); ?>
-	</div>
-
 <?php $this->endWidget(); ?>
 </div><!-- form -->

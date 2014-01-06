@@ -10,5 +10,5 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>Nieuwe gebruiker aanmaken</h1>
-<br>
+
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

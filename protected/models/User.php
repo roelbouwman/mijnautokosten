@@ -7,15 +7,19 @@
  * @property integer $idtbl_user
  * @property string $username
  * @property string $password
+ * @property string $password_repeat
  * @property string $salt
  * @property string $email
  * @property string $roles
+ * @property string $woonplaats
  *
  * The followings are the available model relations:
  * @property TblAuto[] $tblAutos
  */
 class User extends CActiveRecord
 {
+	public $password_repeat;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -43,8 +47,10 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username', 'unique'),
-			array('username, password, email', 'required'),
+			array('username, password, email, woonplaats', 'required'),
 			array('username, password, salt, email', 'length', 'max'=>128),
+			array('password', 'compare'),
+			array('password_repeat', 'safe'),
 			array('email', 'email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -73,6 +79,7 @@ class User extends CActiveRecord
 			'idtbl_user' => 'ID',
 			'username' => 'Gebruikersnaam',
 			'password' => 'Wachtwoord',
+			'password_repeat' => 'Wachtwoord herhalen',
 			'salt' => 'Salt',
 			'email' => 'Email',
 		);

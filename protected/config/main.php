@@ -11,9 +11,9 @@ return array(
 	'language'=>'nl',
 
 	//for testing purposes uncomment theme mobiel
-	'theme'=>'mobiel',
+	//'theme'=>'mobiel',
 	//'theme'=>'biskit',
-	//'theme'=>'mattskitchen',
+	'theme'=>'mattskitchen',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -28,12 +28,12 @@ return array(
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		
-		/*'gii'=>array(
+		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'1234',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
-		),*/
+		),
 		
 	),
 

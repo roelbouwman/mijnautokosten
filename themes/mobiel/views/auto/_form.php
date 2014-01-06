@@ -16,23 +16,26 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->error($model,'merk'); ?>
 		<?php echo $form->textField($model,'merk'); ?>
 		<?php echo $form->labelEx($model,'merk'); ?>
+		<?php echo $form->error($model,'merk'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->textField($model,'type'); ?>
 		<?php echo $form->error($model,'type'); ?>
+		<br>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'brandstof'); ?>
-		<?php echo $form->textField($model,'brandstof'); ?>
-		<?php echo $form->error($model,'brandstof'); ?>
+		<?php
+	        $brandstof = CHtml::listData(Soortbrandstof::model()->findAll(), 'brandstof','brandstof');
+	        echo $form->dropDownList($model, 'brandstof', $brandstof, array('class'=>'button'));
+	    ?>
 	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'beginstand'); ?>
 		<?php echo $form->textField($model,'beginstand'); ?>

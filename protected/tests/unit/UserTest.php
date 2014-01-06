@@ -82,10 +82,11 @@ class UserTest extends CDbTestCase
     	//$this->testSave();
     	$model=User::model()->findByPk(1);
     	$model->password="hoihoi";
+    	$model->password_repeat="hoihoi";
     	$model->save();
     	
    		$test=User::model()->findByPk(1);
-    	
+    	   		
     	$this->assertTrue($test->validatePassword("hoihoi"));
     }
     

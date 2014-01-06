@@ -298,6 +298,8 @@ select{
 }
 a.button {
   cursor: pointer;
+  width: 285px;
+  height: 50px;
 }
 a.button:hover {
   color: #4D4D4D;
