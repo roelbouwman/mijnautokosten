@@ -66,8 +66,8 @@
     <!-- BEGIN FOOTER --> 
     <div id="footer"> 
       <span class="copyright">&copy; <?php echo Yii::app()->name ?> <?php echo date('Y') ?></span> 
-      <a href="#wrapper" title="Back to top" class="top"><img src="<?php echo Yii::app()->theme->baseUrl ?>/images/top.png" alt="" /></a> 
-      <a href="mailto:themes@kubasto.com">themes@kubasto.com</a> 
+       
+      
     </div> 
     <!-- END FOOTER --> 
  

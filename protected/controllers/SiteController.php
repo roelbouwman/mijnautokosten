@@ -34,6 +34,18 @@ class SiteController extends Controller
 	}
 	
 	/**
+	 * This is the view action
+	 * 
+	 */
+	public function actionView()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		
+		$this->render('view');
+	}
+	
+	/**
 	 * This is the action to handle external exceptions.
 	 */
 	public function actionError()
