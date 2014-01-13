@@ -80,7 +80,7 @@
 				array('label'=>'Auto\'s', 'url'=>array('/auto/index')),
 				array('label'=>'Over', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Inloggen', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Uitloggen ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Uitloggen', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
           </div>

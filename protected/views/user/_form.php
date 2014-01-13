@@ -19,9 +19,9 @@ $model->password="";
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textField($model,'email'); ?>
+		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row">
@@ -42,12 +42,6 @@ $model->password="";
 		<?php echo $form->error($model,'salt'); ?>
 	</div>  -->
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-	
 	<div class="row">
 		<?php echo $form->labelEx($model,'woonplaats'); ?>
 		<?php echo $form->textField($model,'woonplaats'); ?>

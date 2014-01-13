@@ -13,10 +13,9 @@ class UserTest extends CDbTestCase
     {
     	$auto=new User();
    		$auto->setAttributes(array(
-        	'username'=>'nieuw',
+        	'email'=>'nieuw@test.nl',
         	'password'=>'newest',
-        	//'salt'=>'1234HvP',
-        	'email'=>'nieuw@test.nl'
+        	        	
     	),false);
     	$this->assertTrue($auto->save(false));
     }
@@ -29,7 +28,7 @@ class UserTest extends CDbTestCase
     {
     	$this->testSave();
     	$model=User::model()->findByPk(2);
-    	$this->assertTrue($model->username=='nieuw');	
+    	$this->assertTrue($model->username=='nieuw@test.nl');	
     }
     
     /**
@@ -106,7 +105,7 @@ class UserTest extends CDbTestCase
     	$model=User::model()->findByPk(1);
     	$model->getUser();
     	    	 
-    	$this->assertTrue($model->username=='tester');
+    	$this->assertTrue($model->username=='test@test.nl');
     }
     
     /**

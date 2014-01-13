@@ -65,7 +65,7 @@
           array('label'=>'user', 'url'=>array('/user/update')),
           //array('label'=>'Over...', 'url'=>array('/site/page', 'view'=>'about')),
           array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-          array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+          array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
         );
       ?>
       <?php $this->widget('zii.widgets.CMenu',array(

@@ -2,9 +2,9 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-ALTER TABLE `autokosten`.`tbl_user` ADD COLUMN `woonplaats` VARCHAR(128) NULL DEFAULT NULL  AFTER `roles` ;
+ALTER TABLE `mijnauto_autokosten`.`tbl_user` ADD COLUMN `woonplaats` VARCHAR(128) NULL DEFAULT NULL  AFTER `roles` ;
 
-CREATE  TABLE IF NOT EXISTS `autokosten`.`tbl_soortbrandstof` (
+CREATE  TABLE IF NOT EXISTS `mijnauto_autokosten`.`tbl_soortbrandstof` (
   `idtbl_soortbrandstof` INT(11) NOT NULL AUTO_INCREMENT ,
   `brandstof` VARCHAR(45) NULL DEFAULT NULL ,
   PRIMARY KEY (`idtbl_soortbrandstof`) )

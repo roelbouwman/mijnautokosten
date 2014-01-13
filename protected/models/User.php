@@ -46,8 +46,8 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username', 'unique'),
-			array('username, password, email, woonplaats', 'required'),
+			array('username, email', 'unique'),
+			array('email, password', 'required'),
 			array('username, password, salt, email', 'length', 'max'=>128),
 			array('password', 'compare'),
 			array('password_repeat', 'safe'),
@@ -141,6 +141,7 @@ class User extends CActiveRecord
 			$this->salt=$newSalt;
 			$this->password=$newPass;
 			$this->roles="leden";
+			$this->username=$this->email;
 		}
 		
 		return parent::beforeSave();

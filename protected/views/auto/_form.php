@@ -29,8 +29,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'brandstof'); ?>
-		<?php echo $form->textField($model,'brandstof'); ?>
-		<?php echo $form->error($model,'brandstof'); ?>
+		<?php
+	        $brandstof = CHtml::listData(Soortbrandstof::model()->findAll(), 'brandstof','brandstof');
+	        echo $form->dropDownList($model, 'brandstof', $brandstof);
+	    ?>
 	</div>
 
 	<div class="row">

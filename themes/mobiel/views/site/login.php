@@ -24,7 +24,7 @@ $this->breadcrumbs=array(
 	<p class="note">Velden met <span class="required">*</span> zijn verplicht.</p>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?><br>
+		<?php echo $form->labelEx($model,'email'); ?><br>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php $form->error($model,'username'); ?>
 	</div>
