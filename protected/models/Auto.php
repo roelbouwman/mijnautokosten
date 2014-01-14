@@ -53,7 +53,7 @@ class Auto extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('merk, type, brandstof, beginstand, kenteken, bouwjaar, aanschafprijs, wegenbelasting, verzekering, aanschaf', 'required'),
+			array('merk, type, brandstof, beginstand, aanschaf', 'required'),
 			array('beginstand, bouwjaar, tbl_user_idtbl_user', 'numerical', 'integerOnly'=>true),
 			array('aanschafprijs, wegenbelasting, verzekering, afschrijving, hoofdauto', 'numerical'),
 			array('merk, type, brandstof, kenteken, afschaf', 'length', 'max'=>45),

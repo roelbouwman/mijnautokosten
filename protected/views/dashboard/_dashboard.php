@@ -21,14 +21,21 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     ),
 ));
 
-echo $this->renderPartial('_brandstofverloop');
+echo $this->renderPartial('_brandstofverloop');	
 
 $this->endWidget('zii.widgets.jui.CJuiDialog');
 
 ?>
 
 <!-- EIND DIALOOGVENSTER -->
-
+<font color=red>
+<?php
+if($auto->verzekering==NULL||$auto->wegenbelasting==NULL){
+	echo "Je hebt nog niet alle gegevens van je auto ingevuld, daarom werkt het dashboard niet goed<br>";
+	echo CHtml::link('Klik hier voor het aanvullen van de gegevens',array('auto/update', 'id'=>$auto->idtbl_auto));
+}
+?>
+</font>
 <table>
 	<tr>
     	<td>    	

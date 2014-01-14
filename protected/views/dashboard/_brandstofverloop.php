@@ -3,8 +3,8 @@
 
 $loop=Auto::getBrandstofVerloop();
 
-$lPrijs;
-$datum;
+$lPrijs=NULL;
+$datum=NULL;
 
 foreach($loop as $row) 
 {
@@ -12,6 +12,7 @@ foreach($loop as $row)
 		$lPrijs[]=(float)$row['literprijs'];
 }
 
+if($datum!=NULL){
 $this->Widget('ext.highcharts.HighchartsWidget', array(
 		'options'=>array(
 				'chart'=> array(
@@ -51,4 +52,5 @@ $this->Widget('ext.highcharts.HighchartsWidget', array(
 				)
 		)
 ));
+}
 ?>

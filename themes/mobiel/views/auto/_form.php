@@ -43,42 +43,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'kenteken'); ?>
-		<?php echo $form->textField($model,'kenteken'); ?>
-		<?php echo $form->error($model,'kenteken'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'bouwjaar'); ?>
-		<?php echo $form->textField($model,'bouwjaar'); ?>
-		<?php echo $form->error($model,'bouwjaar'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'aanschafprijs'); ?>
-		<?php echo $form->textField($model,'aanschafprijs'); ?>
-		<?php echo $form->error($model,'aanschafprijs'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'wegenbelasting'); ?>
-		<?php echo $form->textField($model,'wegenbelasting'); ?>
-		<?php echo $form->error($model,'wegenbelasting'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'verzekering'); ?>
-		<?php echo $form->textField($model,'verzekering'); ?>
-		<?php echo $form->error($model,'verzekering'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'afschrijving'); ?>
-		<?php echo $form->textField($model,'afschrijving'); ?>
-		<?php echo $form->error($model,'afschrijving'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'aanschaf'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 				'model'=>$model,
@@ -93,14 +57,7 @@
 		?>
 		<?php echo $form->error($model,'aanschaf'); ?>
 	</div>
-	
-	<!-- <div class="row">
-		<?php echo $form->labelEx($model,'tbl_user_idtbl_user'); ?>
-		<?php echo $form->textField($model,'tbl_user_idtbl_user'); ?>
-		<?php echo $form->error($model,'tbl_user_idtbl_user'); ?>
-	</div>
-	 -->
-	 
+		 
 	<div class="row buttons">
 		<br>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Aanmaken' : 'Bewaren', array('class'=>'button')); ?>

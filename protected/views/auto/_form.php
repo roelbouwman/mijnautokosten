@@ -62,12 +62,14 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'wegenbelasting'); ?>
 		<?php echo $form->textField($model,'wegenbelasting'); ?>
+		<?php echo "Nodig voor juiste werking Dashboard"?>
 		<?php echo $form->error($model,'wegenbelasting'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'verzekering'); ?>
 		<?php echo $form->textField($model,'verzekering'); ?>
+		<?php echo "Nodig voor juiste werking Dashboard"?>
 		<?php echo $form->error($model,'verzekering'); ?>
 	</div>
 
