@@ -96,6 +96,25 @@ class User extends CActiveRecord
 	}
 	
 	/**
+	 * Sends new user password to give e-mailadres
+	 * 
+	 * @param Emailadres $email
+	 */
+	public function mailPassword($email)
+	{
+		//TODO:wachtwoord resetten en dan mailen
+		$message            = new YiiMailMessage;
+           //this points to the file test.php inside the view path
+        //$message->view = "test";
+        
+        $message->subject    = 'My TestSubject';
+        $message->setBody('dit is het', 'text/html');                
+        $message->addTo($email);
+        $message->from = 'info@mijnautokosten.nl';   
+        Yii::app()->mail->send($message); 
+	}
+	
+	/**
 	 * This function generates a password salt as a string of x (default = 15) characters
 	 * in the a-zA-Z0-9!@#$%&*? range.
 	 * @param $max integer The number of characters in the string

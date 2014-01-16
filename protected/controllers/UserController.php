@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create', 'view'),
+				'actions'=>array('create', 'view','mailpassword'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -78,7 +78,33 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
-
+	
+	/**
+	 * Sends an email with new password
+	 * 
+	 */
+	public function actionMailpassword()
+	{
+		$model=new User;
+		
+		//$this->performAjaxValidation($model);
+		
+		if(isset($_POST['User']))
+		{
+			$model->attributes=$_POST['User'];
+				
+			//echo $model->email;
+			if($model->email!=null){
+				$model->mailPassword($model->email);
+				$this->redirect(array('site/index'));
+			}
+		}
+		
+		$this->render('mailpassword',array(
+			'model'=>$model,
+		));
+	}
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

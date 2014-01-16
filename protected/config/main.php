@@ -22,18 +22,19 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'application.controllers.*'
+		'application.controllers.*',
+		'ext.yii-mail.YiiMailMessage'
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		
-		/*'gii'=>array(
+		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'1234',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
-		),*/
+		),
 		
 	),
 
@@ -45,6 +46,18 @@ return array(
 			'class' => 'WebUser',
 		),
 		
+		'mail' => array(
+                'class' => 'ext.yii-mail.YiiMail',
+                'transportType'=>'smtp',
+                'transportOptions'=>array(
+                        'host'=>'mail.mijnautokosten.nl',
+                        'username'=>'info@mijnautokosten.nl',
+                        'password'=>'dBinea33',
+                        'port'=>'25',                       
+                ),
+                //'viewPath' => 'application.views.mail',             
+        ),
+    	
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

@@ -108,6 +108,19 @@ class UserTest extends CDbTestCase
     	$this->assertTrue($model->username=='test@test.nl');
     }
     
+	/**
+	 * Sends new user password to give e-mailadres
+	 * 
+	 * @param Emailadres $email
+	 */
+	public function testMailPassword()
+	{
+		$model=User::model()->findByPk(1);
+		$model->mailPassword("roelbouwman@gmail.com");
+		
+		$this->assertTrue(true);
+	}
+	
     /**
      * 
      * dummy methode voor 100% coverage
