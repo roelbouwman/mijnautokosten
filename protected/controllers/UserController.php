@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create', 'view','mailpassword'),
+				'actions'=>array('create', 'view','mailpassword', 'mail'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -80,29 +80,35 @@ class UserController extends Controller
 	}
 	
 	/**
-	 * Sends an email with new password
 	 * 
-	 */
-	public function actionMailpassword()
+	 * Mail de gebruiker zijn nieuwe password
+	 */	
+	public function actionMail()
 	{
-		$model=new User;
-		
-		//$this->performAjaxValidation($model);
-		
-		if(isset($_POST['User']))
-		{
-			$model->attributes=$_POST['User'];
-				
-			//echo $model->email;
-			if($model->email!=null){
-				$model->mailPassword($model->email);
-				$this->redirect(array('site/index'));
-			}
-		}
-		
-		$this->render('mailpassword',array(
-			'model'=>$model,
-		));
+	    $model=new User;
+	
+	    // uncomment the following code to enable ajax-based validation
+	    /*
+	    if(isset($_POST['ajax']) && $_POST['ajax']==='user-mail-form')
+	    {
+	        echo CActiveForm::validate($model);
+	        Yii::app()->end();
+	    }
+	    */
+	
+	    if(isset($_POST['User']))
+	    {
+	        $model->attributes=$_POST['User'];
+	        $model->password="test";
+	        $model->password_repeat="test";
+	        if($model->validate())
+	        {
+	            // form inputs are valid, do something here
+	            $model->mailPassword($model->email);
+	            $this->redirect(array('site/index'));
+	        }
+	    }
+	    $this->render('mail',array('model'=>$model));
 	}
 	
 	/**

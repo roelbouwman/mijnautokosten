@@ -96,18 +96,16 @@ class User extends CActiveRecord
 	}
 	
 	/**
-	 * Sends new user password to give e-mailadres
+	 * Sends new user password to given e-mailadres
 	 * 
 	 * @param Emailadres $email
 	 */
 	public function mailPassword($email)
 	{
 		//TODO:wachtwoord resetten en dan mailen
-		$message            = new YiiMailMessage;
-           //this points to the file test.php inside the view path
-        //$message->view = "test";
-        
-        $message->subject    = 'My TestSubject';
+		$message=new YiiMailMessage;
+                  
+        $message->subject='My TestSubject';
         $message->setBody('dit is het', 'text/html');                
         $message->addTo($email);
         $message->from = 'info@mijnautokosten.nl';   
