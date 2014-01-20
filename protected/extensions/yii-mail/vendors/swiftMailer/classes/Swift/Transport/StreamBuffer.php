@@ -24,6 +24,8 @@ class Swift_Transport_StreamBuffer
   implements Swift_Transport_IoBuffer
 {
   
+	private $_sequence;
+	 
   /** A primary socket */
   private $_stream;
   

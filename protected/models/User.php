@@ -19,6 +19,7 @@
 class User extends CActiveRecord
 {
 	public $password_repeat;
+	public $sendmail;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -54,7 +55,7 @@ class User extends CActiveRecord
 			array('email', 'email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('idtbl_user, username, password, salt, email', 'safe', 'on'=>'search'),
+			array('idtbl_user, username, password, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -93,23 +94,6 @@ class User extends CActiveRecord
 	public function hashPassword($password,$salt)
 	{
 		return md5($salt.$password);
-	}
-	
-	/**
-	 * Sends new user password to given e-mailadres
-	 * 
-	 * @param Emailadres $email
-	 */
-	public function mailPassword($email)
-	{
-		//TODO:wachtwoord resetten en dan mailen
-		$message=new YiiMailMessage;
-                  
-        $message->subject='My TestSubject';
-        $message->setBody('dit is het', 'text/html');                
-        $message->addTo($email);
-        $message->from = 'info@mijnautokosten.nl';   
-        Yii::app()->mail->send($message); 
 	}
 	
 	/**

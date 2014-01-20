@@ -29,12 +29,12 @@ return array(
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		
-		/*'gii'=>array(
+		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'1234',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
-		),*/
+		),
 		
 	),
 
@@ -50,14 +50,24 @@ return array(
                 'class' => 'ext.yii-mail.YiiMail',
                 'transportType'=>'smtp',
                 'transportOptions'=>array(
+                        'host'=>'smtp.ziggo.nl',
+                        'port'=>'25',                       
+                ),
+                //'viewPath' => 'application.views.mail',             
+        ),
+    	
+        /*'mail' => array(
+                'class' => 'ext.yii-mail.YiiMail',
+                'transportType'=>'smtp',
+                'transportOptions'=>array(
                         'host'=>'mail.mijnautokosten.nl',
                         'username'=>'info@mijnautokosten.nl',
                         'password'=>'0UgC4d+GxU28',
                         'port'=>'25',                       
                 ),
                 //'viewPath' => 'application.views.mail',             
-        ),
-    	
+        ),*/
+        
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

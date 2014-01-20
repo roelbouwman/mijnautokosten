@@ -85,7 +85,7 @@ class UserController extends Controller
 	 */	
 	public function actionMail()
 	{
-	    $model=new User;
+	    $model=new EmailForm;
 	
 	    // uncomment the following code to enable ajax-based validation
 	    /*
@@ -96,15 +96,14 @@ class UserController extends Controller
 	    }
 	    */
 	
-	    if(isset($_POST['User']))
+	    if(isset($_POST['EmailForm']))
 	    {
-	        $model->attributes=$_POST['User'];
-	        $model->password="test";
-	        $model->password_repeat="test";
+	        $model->attributes=$_POST['EmailForm'];
+	        
 	        if($model->validate())
 	        {
 	            // form inputs are valid, do something here
-	            $model->mailPassword($model->email);
+	            $model->mailPassword($model->mail);
 	            $this->redirect(array('site/index'));
 	        }
 	    }
