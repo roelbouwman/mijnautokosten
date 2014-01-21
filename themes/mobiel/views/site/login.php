@@ -40,9 +40,13 @@ $this->breadcrumbs=array(
 		<br>
 		<?php echo CHtml::submitButton('Login', array('class'=>'button')); ?>
 		<br>
-		Nieuwe gebruiker? Tik op knop hieronder:
+		<br>
 		<br>
 		<a href="?r=user/create" class="button">Nieuwe gebruiker?</a>
+		<br>
+		<br>
+		<br>
+		<a href="?r=user/account" class="button">Wachtwoord vergeten?</a>
 	</div>
 	
 <?php $this->endWidget(); ?>

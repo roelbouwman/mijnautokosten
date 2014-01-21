@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create', 'view','mailpassword', 'mail'),
+				'actions'=>array('create', 'view', 'account'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -110,6 +110,35 @@ class UserController extends Controller
 	    $this->render('mail',array('model'=>$model));
 	}
 	
+	/**
+	 * 
+	 * Enter description here ...
+	 */
+	public function actionAccount()
+	{
+	    $model=new AccountForm;
+	
+	    // uncomment the following code to enable ajax-based validation
+	    /*
+	    if(isset($_POST['ajax']) && $_POST['ajax']==='account-form-account-form')
+	    {
+	        echo CActiveForm::validate($model);
+	        Yii::app()->end();
+	    }
+	    */
+	
+	    if(isset($_POST['AccountForm']))
+	    {
+	        $model->attributes=$_POST['AccountForm'];
+	        if($model->validate())
+	        {
+	            $model->mailPassword($model->email);
+	            $this->redirect(array('site/index'));
+	        }
+	    }
+	    $this->render('account',array('model'=>$model));
+	}
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

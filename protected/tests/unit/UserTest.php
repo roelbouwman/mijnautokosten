@@ -115,7 +115,7 @@ class UserTest extends CDbTestCase
 	 */
 	public function testMailPassword()
 	{
-		$model=User::model()->findByPk(1);
+		$model=new EmailForm;
 		$model->mailPassword("roelbouwman@gmail.com");
 		
 		$this->assertTrue(true);

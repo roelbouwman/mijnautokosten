@@ -37,6 +37,7 @@ $this->breadcrumbs=array(
 
 	<div class="row">
 		<?php echo CHtml::link('Nieuwe gebruiker?',array('user/create'));	?>
+		<?php echo CHtml::link('Wachtwoord vergeten?',array('user/account'));	?>
 	</div>
 	
 	<div class="row rememberMe">
