@@ -64,14 +64,40 @@ class AccountForm extends CActiveRecord
 	 */
 	public function mailPassword($email)
 	{
+		$model=User::model()->find('email=:email', array(':email'=>$email));
+		
+		$password=$this->generatePassword();
+		
+		$model->password=$password;
+		$model->password_repeat=$password;
+		$model->save();
+		
 		//TODO:wachtwoord resetten en dan mailen
 		$message=new YiiMailMessage;
                   
         $message->subject='Reset wachtwoord';
-        $message->setBody('Uw wachtwoord is gewijzigd in:', 'text/html');                
+        $message->setBody('Dit is een automatisch gegenereerde mail, als u niet zelf een nieuw wachtwoord heeft '.
+        'aangevraagd neem dan contact met ons op door deze mail te beantwoorden<br><br>'.
+        'Uw wachtwoord is gewijzigd in: '.$password.'<br><br>U kunt met dit wachtwoord inloggen, het is raadzaam meteen het wachtwoord te wijzigen. ', 'text/html');                
         $message->addTo($email);
         $message->from = 'info@mijnautokosten.nl';   
         Yii::app()->mail->send($message); 
+	}
+	
+	/**
+	 * 
+	 * een gegenereerd wachtwoord.
+	 * @param int $max
+	 */
+	function generatePassword($max = 8) {
+		$characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		$i = 0;
+		$password = "";
+		while ($i < $max) {
+			$password .= $characterList{mt_rand(0, (strlen($characterList) - 1))};
+			$i++;
+		}
+		return $password;
 	}
 	
 	/**
