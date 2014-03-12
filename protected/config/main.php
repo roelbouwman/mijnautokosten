@@ -11,9 +11,9 @@ return array(
 	'language'=>'nl',
 
 	//for testing purposes uncomment theme mobiel
-	'theme'=>'mobiel',
+	//'theme'=>'mobiel',
 	//'theme'=>'biskit',
-	//'theme'=>'mattskitchen',
+	'theme'=>'mattskitchen',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
