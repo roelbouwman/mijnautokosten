@@ -73,9 +73,7 @@ if($auto->verzekering==NULL||$auto->wegenbelasting==NULL){
                 'suffix' => ':100km'));
             ?> 	
         </td>
-    </tr>
    
-    <tr>
     	<td>
     	<?php 
     	//these variables are used in the highchartswidget also
@@ -84,6 +82,7 @@ if($auto->verzekering==NULL||$auto->wegenbelasting==NULL){
         $belasting = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->wegenbelasting;
         $verzekering = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->verzekering;
     	$knPerMaand = $totaalTanken + $totaalOnderhoud + $belasting + $verzekering;
+    	$totaalVergoeding = Vergoeding::totaalVergoedingen($auto->idtbl_auto);
     	
 //$columnsArray = array('id','name','lastname','tel','email');
 $rowsArray = array(
@@ -131,6 +130,33 @@ $this->widget('ext.htmltableui.htmlTableUi',array(
                     'series' => array(
                         array('name' => $auto->type, 'data' => array((int) $totaalOnderhoud, (int) $totaalTanken,
                                 (int) $belasting, (int) $verzekering))
+                    )
+                )
+            ));
+            ?>
+        </td>
+   
+        <td>
+            <?php
+                        
+            //here the variables are used for the second time
+            $this->Widget('ext.highcharts.HighchartsWidget', array(
+                'options' => array(
+                    'chart' => array(
+                        'type' => 'column',
+                        'width' => 400,
+                        'height' => 300
+                    ),
+                    'title' => array('text' => 'Autokosten vs Vergoedingen'),
+                    'xAxis' => array(
+                        'categories' => array('Kosten', 'Vergoedingen')
+                    ),
+                    'yAxis' => array(
+                        'title' => array('text' => 'In keiharde euros')
+                    ),
+                    'series' => array(
+                        array('name' => $auto->type, 'data' => array((int) $totaalOnderhoud + (int) $totaalTanken +
+                                (int) $belasting + (int) $verzekering, (int) $totaalVergoeding))
                     )
                 )
             ));

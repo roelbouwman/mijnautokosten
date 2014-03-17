@@ -13,6 +13,10 @@ Maak een keuze uit het menu:
 <br />
 <br />
 <br />
+<a href="?r=vergoeding/createMobiel" class="button">Vergoeding</a>
+<br />
+<br />
+<br />
 <a href="?r=auto/create" class="button">Auto</a>
 <br />
 <br />
