@@ -12,6 +12,10 @@
 )); ?>
 
 	<p class="note">Velden met <span class="required">*</span> zijn verplicht.</p>
+	<p>
+	Let op! Bedragen zijn per <b>maand</b>, het programma rekent de bedragen uit. Voer bij belasting
+	en verzekering een <b>bedrag per maand</b> in!
+	</p>
 
 	<?php echo $form->errorSummary($model); ?>
 

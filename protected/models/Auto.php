@@ -96,7 +96,7 @@ class Auto extends CActiveRecord
 			'afschrijving' => 'Afschrijving',
 			'aanschaf' => 'Datum aanschaf',
 			'hoofdauto' => 'Hoofdauto',
-			'afschaf' => 'Datum afschaf',
+			'afschaf' => 'Datum verkoop',
 			'tbl_user_idtbl_user' => 'Tbl User Idtbl User',
 		);
 	}

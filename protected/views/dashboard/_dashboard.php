@@ -122,14 +122,16 @@ $this->widget('ext.htmltableui.htmlTableUi',array(
                     ),
                     'title' => array('text' => 'Autokosten'),
                     'xAxis' => array(
-                        'categories' => array('Onderhoud', 'Brandstof', 'Belasting', 'Verzekering')
+                        'categories' => array($auto->merk.' '.$auto->type)
                     ),
                     'yAxis' => array(
                         'title' => array('text' => 'In keiharde euros')
                     ),
                     'series' => array(
-                        array('name' => $auto->type, 'data' => array((int) $totaalOnderhoud, (int) $totaalTanken,
-                                (int) $belasting, (int) $verzekering))
+                        array('name' => 'Onderhoud', 'data' => array((int) $totaalOnderhoud), 'color'=> 'blue'),
+						array('name' => 'Tanken', 'data' => array((int) $totaalTanken), 'color'=> 'navy'),
+						array('name' => 'Belasting', 'data' => array((int) $belasting), 'color'=> 'gray'),
+						array('name' => 'Verzekering', 'data' => array((int) $verzekering), 'color'=> 'darkgray')                        
                     )
                 )
             ));
@@ -149,17 +151,20 @@ $this->widget('ext.htmltableui.htmlTableUi',array(
                     ),
                     'title' => array('text' => 'Autokosten vs Vergoedingen'),
                     'xAxis' => array(
-                        'categories' => array('Kosten', 'Vergoedingen')
+                        'categories' => array($auto->merk.' '.$auto->type)
                     ),
                     'yAxis' => array(
                         'title' => array('text' => 'In keiharde euros')
                     ),
                     'series' => array(
-                        array('name' => $auto->type, 'data' => array((int) $totaalOnderhoud + (int) $totaalTanken +
-                                (int) $belasting + (int) $verzekering, (int) $totaalVergoeding))
+                        array('name' => 'kosten', 'data' => array((int) $totaalOnderhoud + (int) $totaalTanken +
+                                (int) $belasting + (int) $verzekering), 'color'=> 'red'),
+                        array('name' => 'vergoeding', 'data' => array ( (int) $totaalVergoeding), 'color'=> 'green')
                     )
                 )
             ));
+            
+            
             ?>
         </td>
     </tr>

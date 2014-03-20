@@ -62,7 +62,7 @@ return array(
                 'transportOptions'=>array(
                         'host'=>'mail.mijnautokosten.nl',
                         'username'=>'info@mijnautokosten.nl',
-                        'password'=>'0UgC4d+GxU28',
+                        'password'=>'1234HvP!',
                         'port'=>'25',                       
                 ),
                 //'viewPath' => 'application.views.mail',             
