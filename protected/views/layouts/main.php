@@ -3,8 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-
+	<meta name="content-language" content="nl" />
+	<meta name="description" content="Met deze website kun je je autokosten bijhouden! Voer tankbeurten, onderhoud en je vergoeding in en bekijk de grafieken en meters. Log in met het demo account en krijg alvast een indruk hoe de applicatie werkt..." />
+	<meta name="keywords" content="autokosten, tankbeurt, onderhoud, kosten, auto, inzicht, grafiek, meten, app, smartphone" />
+	<meta name="author" content="Roel Bouwman" />
+	
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/css3-buttons.css" media="screen" />
@@ -13,7 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<title>Mijn <?php echo CHtml::encode($this->pageTitle); ?></title>
+	
 	
 	<script>
         $(document).ready(function() {
