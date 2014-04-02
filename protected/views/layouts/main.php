@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="content-language" content="nl" />
 	<meta name="description" content="Met deze website kun je je autokosten bijhouden! Voer tankbeurten, onderhoud en je vergoeding in en bekijk de grafieken en meters. Log in met het demo account en krijg alvast een indruk hoe de applicatie werkt..." />
-	<meta name="keywords" content="autokosten, tankbeurt, onderhoud, kosten, auto, inzicht, grafiek, meten, app, smartphone" />
+	<meta name="keywords" content="gratis, autokosten, berekenen, tankbeurt, onderhoud, kosten, auto, inzicht, grafiek, meten, app, smartphone" />
 	<meta name="author" content="Roel Bouwman" />
 	
 	<!-- blueprint CSS framework -->

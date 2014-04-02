@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name;
 
 <p>
 Met deze app kun je je autokosten bijhouden, voer tankbeurten in via je telefoon
-en bekijk later op de website de grafieken en meters.
+en bekijk later op de website de grafieken en meters. Bereken hier je autokosten.
 
 </p>
 <p>

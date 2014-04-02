@@ -9,7 +9,11 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="language" content="en" />
+  <meta name="content-language" content="nl" />
+	<meta name="description" content="Met deze website kun je je autokosten bijhouden! Voer tankbeurten, onderhoud en je vergoeding in en bekijk de grafieken en meters. Log in met het demo account en krijg alvast een indruk hoe de applicatie werkt..." />
+	<meta name="keywords" content="gratis, autokosten, berekenen, tankbeurt, onderhoud, kosten, auto, inzicht, grafiek, meten, app, smartphone" />
+	<meta name="author" content="Roel Bouwman" />
+	
 
   <link rel="shortcut icon" href="<?php echo Yii::app()->theme->baseUrl; ?>/favicon.ico" type="image/x-icon" >
 
