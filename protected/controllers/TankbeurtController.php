@@ -32,6 +32,10 @@ class TankbeurtController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'roles'=>array('demo'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','createMobiel', 'update', 'delete'),
 				'roles'=>array('leden'),
 			),

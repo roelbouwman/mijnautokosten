@@ -35,6 +35,10 @@ class AutoController extends Controller
 				'actions'=>array('create', 'update', 'delete'),
 				'roles'=>array('leden'),
 			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create', 'update'),
+				'roles'=>array('demo'),
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('test@test.nl'),

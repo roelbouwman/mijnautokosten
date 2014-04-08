@@ -5,19 +5,32 @@ $this->pageTitle=Yii::app()->name;
 
 
 ?>
-<br>
-
-<h1>Mijn <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
+<table>
+  <tr>
+    <td>
+<?php $this->widget('ext.slider.slider',
+	array(
+            'container'=>'slideshow',
+            'width'=>560, 
+            'height'=>340, 
+            'timeout'=>3000,
+            'infos'=>false,
+            'constrainImage'=>true,)
+            //'images'=>array('01.jpg','02.jpg','03.jpg','04.jpg'),
+            //'alts'=>array('First description','Second description','Third description','Four description'))
+	);?>
+    
+    </td>
+    <td>
 <p>
-Met deze app kun je je autokosten bijhouden, voer tankbeurten in via je telefoon
-en bekijk later op de website de grafieken en meters. Bereken hier je autokosten.
-
+Bereken met deze app je autokosten, voer tankbeurten in via je telefoon
+en bekijk later op de website de grafieken en meters. Ga naar de veelgestelde <?php echo CHtml::link('vragen', array('site/page&view=about')); ?> voor meer informatie.
 </p>
+
 <p>
 <b>Demo</b><br>
 Log in met het <?php echo CHtml::link('demo', array('site/login')); ?> account en krijg alvast een indruk hoe de applicatie werkt.
-Met het demo account kun je alleen raadplegen maar niet wijzigen, toevoegen of verwijderen. Het demo account heeft representatieve
+Met het demo account kun je raadplegen, wijzigen en toevoegen maar niet verwijderen. Het demo account heeft representatieve
 voorbeeld gegevens zodat je een goede indruk krijgt van de mogelijkheden.<br>
 </p>
 <p>
@@ -28,16 +41,18 @@ voorbeeld gegevens zodat je een goede indruk krijgt van de mogelijkheden.<br>
 <font color="green" >Wachtwoord:demo</font>
 </div>
 </p>
+	</td>
+  </tr>
+</table>
+
 <p>
 <b>Gratis account</b><br>
 Deze app is geheel gratis, maak gratis een <?php echo CHtml::link('account', array('user/create')); ?> aan en begin meteen met het vastleggen van je 
 autokosten
 </p>
 <p>
-<b>Screenshot mobiele app</b><br>
-Hieronder zie je een screenshot van de mobiele app. Je gebruikt hiervoor dezelfde url http://www.mijnautokosten.nl 
-De app herkent automatisch of je via een mobiel device of een gewone computer verbinding maakt.<br>
-<br>
-<img src="images/phone.png" alt="Smiley face"> 
+<b>Mobiele app</b><br>
+Surf met je smartphone naar <code>http://www.mijnautokosten.nl</code> en de app herkent automatisch dat je via een mobiel device verbinding maakt.<br>
+
 
 </p>
