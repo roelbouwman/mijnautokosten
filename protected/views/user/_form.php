@@ -13,7 +13,7 @@ $model->password="";
 	'id'=>'user-form',
 	'enableAjaxValidation'=>true,
 )); ?>
-
+	Ga naar de veelgestelde <?php echo CHtml::link('vragen', array('site/page&view=about')); ?> voor meer informatie.
 	<p class="note">Velden met <span class="required">*</span> zijn verplicht.</p>
 
 	<?php echo $form->errorSummary($model); ?>
