@@ -15,8 +15,8 @@ $this->pageTitle=Yii::app()->name;
             'height'=>340, 
             'timeout'=>3000,
             'infos'=>false,
-            'constrainImage'=>true,)
-            //'images'=>array('01.jpg','02.jpg','03.jpg','04.jpg'),
+            'constrainImage'=>true,
+            'images'=>array('autos.png','brandstofprijzen.png','dashboard.png','loginMobiel.png','tankbeurt.png','tankbeurtDatum.png','tankbeurten.png','tankbeurtMobiel.png', ),)
             //'alts'=>array('First description','Second description','Third description','Four description'))
 	);?>
     

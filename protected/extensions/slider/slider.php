@@ -149,6 +149,7 @@ class slider extends CWidget
 		//for dinamic pages
 			$this->imgsFolder = Yii::app()->request->hostInfo.Yii::app()->baseUrl.$this->sliderBase.$_GET['id'].'/';
 
+			
 		$this->defaultAlt = $this->defaultAlt ? $this->defaultAlt : '';
 		$this->defaultUrl = $this->defaultUrl ? $this->defaultUrl : Yii::app()->request->hostInfo;
 		
