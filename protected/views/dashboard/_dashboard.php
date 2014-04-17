@@ -89,8 +89,7 @@ $rowsArray = array(
     array('aantal maanden in bezit',Auto::getMonths($auto->afschaf, $auto->aanschaf)),
     array('aantal jaren in bezit',round(Auto::getMonths($auto->afschaf, $auto->aanschaf) / 12, 2)),
     array('totaal gereden km',Tankbeurt::model()->aantalkm($auto->idtbl_auto)),
-    array('brandstofprijs (klik prijs voor grafiek)',CHtml::link(Tankbeurt::model()->laatsteBrandstofprijs($auto->idtbl_auto), '#', array(
-                'onclick' => '$("#dialogBrandstof").dialog("open"); return false;'))), 
+    array('brandstofprijs', CHtml::button(Tankbeurt::model()->laatsteBrandstofprijs($auto->idtbl_auto), array('onclick' => '$("#dialogBrandstof").dialog("open"); return false;'))), 
     //array('<b>kosten per maand</b>',round($knPerMaand/Auto::getMonths($auto->afschaf, $auto->aanschaf))),  
 );
  
@@ -149,17 +148,22 @@ $this->widget('ext.htmltableui.htmlTableUi',array(
                         'width' => 400,
                         'height' => 300
                     ),
+                    'plotOptions' => array(
+                		'column' => array('stacking' => 'normal')
+                    ),
                     'title' => array('text' => 'Autokosten vs Vergoedingen'),
                     'xAxis' => array(
-                        'categories' => array($auto->merk.' '.$auto->type)
+                        'categories' => array('kosten','vergoeding')
                     ),
                     'yAxis' => array(
                         'title' => array('text' => 'In keiharde euros')
                     ),
                     'series' => array(
-                        array('name' => 'kosten', 'data' => array((int) $totaalOnderhoud + (int) $totaalTanken +
-                                (int) $belasting + (int) $verzekering), 'color'=> 'red'),
-                        array('name' => 'vergoeding', 'data' => array ( (int) $totaalVergoeding), 'color'=> 'green')
+                        array('name' => 'onderhoud', 'data' => array( (int) $totaalOnderhoud, 0,),'color'=> 'blue'),
+                        array('name' => 'tanken', 'data' => array ( (int) $totaalTanken, 0), 'color'=> 'navy'),
+                        array('name' => 'belasting', 'data' => array ( (int) $belasting, 0), 'color'=> 'gray'),
+                        array('name' => 'verzekering', 'data' => array ( (int) $verzekering, 0), 'color'=> 'darkgray'),
+                        array('name' => 'vergoeding', 'data' => array ( 0, (int) $totaalVergoeding), 'color'=> 'green')
                     )
                 )
             ));

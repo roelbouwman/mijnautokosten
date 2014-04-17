@@ -25,6 +25,8 @@ $this->pageTitle=Yii::app()->name;
 <p>
 Bereken met deze app je autokosten, voer tankbeurten in via je telefoon
 en bekijk later op de website de grafieken en meters. Ga naar de veelgestelde <?php echo CHtml::link('vragen', array('site/page&view=about')); ?> voor meer informatie.
+<br><br>
+Bekijk de <a href="#release notes">release notes</a> met de laatste wijzigingen.
 </p>
 
 <p>
@@ -53,6 +55,19 @@ autokosten
 <p>
 <b>Mobiele app</b><br>
 Surf met je smartphone naar <code>http://www.mijnautokosten.nl</code> en de app herkent automatisch dat je via een mobiel device verbinding maakt.<br>
-
-
 </p>
+<p>
+<b><a name="release notes"></a>Release notes</b><br>
+<i>Versie 1.4.1:</i> stacked bar bij grafiek vergoeding en totale kosten gemaakt, releasenotes aan index toegevoegd, knop voor openen grafiek bij brandstofprijs toegevoegd<br> 
+<i>Versie 1.4:</i> nieuwe indexpagina, FAQ toegevoegd bij scherm over...<br>
+<i>Versie 1.3.9:</i> meta tags aangepast<br>
+<i>Versie 1.3.8:</i> grafieken aangepast, gekleurde bars. scherm wijzig/invoer auto aangepast: melding dat bedragen per maand zijn<br>
+<i>Versie 1.3.7:</i> nieuwe functionaliteit 'vergoeding' toegevoegd<br>
+<i>Versie 1.3.5:</i> mailen van wachtwoord verbeterd, checkt nu ook of email bestaat. Zoniet dan geen wachtwoord reset<br>
+<i>Versie 1.3.4:</i> mailfunctionaliteit afgebouwd<br>
+<i>Versie 1.3.3:</i> laatste wijzigingen aan de mobiele app, nieuwe knop gemaakt<br>
+<i>Versie 1.3.2:</i> mobiele app uitgebreid met menuitem uitloggen, user uitgebreid met woonplaatsveld en bij aanmaken user met password repeat, extra tabel toegevoegd soortbrandstof, bij aanmaken nieuwe auto dropdownlist soortbrandstof toegevoeg<br>
+<i>Versie 1.3:</i> mobiele versie productiewaardig gemaakt<br>
+<i>Versie 1.2:</i> initiele setup repository
+</p>
+
