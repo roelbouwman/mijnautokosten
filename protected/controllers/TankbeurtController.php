@@ -186,11 +186,9 @@ class TankbeurtController extends Controller
 	 */
 	public function actionLijst($id)
 	{
-		$model = new Tankbeurt();
-		$model->tbl_auto_idtbl_auto=$id;
-		
+				
 		$criteria = new CDbCriteria();
-		$criteria->addSearchCondition('tbl_auto_idtbl_auto', $id, true);
+		$criteria->condition = "tbl_auto_idtbl_auto = $id";
 	
 		$dataProvider=new CActiveDataProvider('Tankbeurt', array(
 				'criteria'=>$criteria,

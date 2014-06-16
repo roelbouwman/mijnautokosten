@@ -26,6 +26,7 @@ $this->breadcrumbs=array(
 		'liters',
 		'literprijs',
 		'kmstand',
+		//'tbl_auto_idtbl_auto',
 		array(
 			'class'=>'CButtonColumn',
 		),
