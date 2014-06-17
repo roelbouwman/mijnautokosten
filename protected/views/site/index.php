@@ -58,6 +58,7 @@ Surf met je smartphone naar <code>http://www.mijnautokosten.nl</code> en de app 
 </p>
 <p>
 <b><a name="release notes"></a>Release notes</b><br>
+<i>Versie 1.4.2:</i> issue #6 opgelost, fout bij alle tankbeurten <br>
 <i>Versie 1.4.1:</i> stacked bar bij grafiek vergoeding en totale kosten gemaakt, releasenotes aan index toegevoegd, knop voor openen grafiek bij brandstofprijs toegevoegd<br> 
 <i>Versie 1.4:</i> nieuwe indexpagina, FAQ toegevoegd bij scherm over...<br>
 <i>Versie 1.3.9:</i> meta tags aangepast<br>
