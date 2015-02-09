@@ -34,6 +34,14 @@
 	</div>
 	
 	<div class="row">
+		<?php echo $form->labelEx($model,'onderhoud'); ?>
+		<?php
+	        $onderhoud = CHtml::listData(Soortonderhoud::model()->findAll(), 'onderhoud','onderhoud');
+	        echo $form->dropDownList($model, 'onderhoud', $onderhoud);
+	    ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'omschrijving'); ?>
 		<?php echo $form->textField($model,'omschrijving'); ?>
 		<?php echo $form->error($model,'omschrijving'); ?>

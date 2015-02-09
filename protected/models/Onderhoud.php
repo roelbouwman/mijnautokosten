@@ -42,7 +42,7 @@ class Onderhoud extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('omschrijving, datum, kosten, kmstand', 'required'),
+			array('omschrijving, datum, kosten, kmstand, onderhoud', 'required'),
 			array('tbl_auto_idtbl_auto, kmstand', 'numerical', 'integerOnly'=>true),
 			array('kosten', 'numerical'),
 			array('omschrijving', 'length', 'max'=>128),
