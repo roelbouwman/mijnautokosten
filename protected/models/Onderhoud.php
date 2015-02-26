@@ -89,7 +89,21 @@ class Onderhoud extends CActiveRecord
 		$sum = Yii::app()->db->createCommand()
 		->select('SUM(kosten)')
 		->from('tbl_onderhoud')
-		->where('tbl_auto_idtbl_auto=:id', array(':id'=>$id))
+		->where('tbl_auto_idtbl_auto=:id AND onderhoud=:oh', array(':id'=>$id, ':oh'=>'onderhoud'))
+		->queryScalar();
+		return $sum;
+	}
+	
+	/**
+	 * rekent het totaal aan onderhoud uit
+	 * @return integer totaal
+	 */
+	public function totaalExtraKosten($id)
+	{
+		$sum = Yii::app()->db->createCommand()
+		->select('SUM(kosten)')
+		->from('tbl_onderhoud')
+		->where('tbl_auto_idtbl_auto=:id AND onderhoud=:oh', array(':id'=>$id, ':oh'=>'extra kosten'))
 		->queryScalar();
 		return $sum;
 	}
@@ -109,6 +123,7 @@ class Onderhoud extends CActiveRecord
 		$criteria->compare('omschrijving',$this->omschrijving,true);
 		$criteria->compare('datum',$this->datum,true);
 		$criteria->compare('kosten',$this->kosten);
+		$criteria->compare('onderhoud',$this->onderhoud);
 		$criteria->compare('tbl_auto_idtbl_auto',$this->tbl_auto_idtbl_auto);
 		$criteria->compare('kmstand',$this->kmstand);
 

@@ -27,6 +27,14 @@
 	</div>
 	
 	<div class="row">
+		<?php echo $form->labelEx($model,'onderhoud'); ?>
+		<?php
+	        $onderhoud = CHtml::listData(Soortonderhoud::model()->findAll(), 'onderhoud','onderhoud');
+	        echo $form->dropDownList($model, 'onderhoud', $onderhoud);
+	    ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'datum'); ?><br>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 				'model'=>$model,

@@ -79,6 +79,7 @@ if($auto->verzekering==NULL||$auto->wegenbelasting==NULL){
     	//these variables are used in the highchartswidget also
     	$totaalTanken = Tankbeurt::model()->totaalTankbeurten($auto->idtbl_auto);
         $totaalOnderhoud = Onderhoud::model()->totaalOnderhoud($auto->idtbl_auto);
+        $totaalExtraKosten = Onderhoud::model()->totaalExtraKosten($auto->idtbl_auto);
         $belasting = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->wegenbelasting;
         $verzekering = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->verzekering;
     	$knPerMaand = $totaalTanken + $totaalOnderhoud + $belasting + $verzekering;
@@ -128,6 +129,7 @@ $this->widget('ext.htmltableui.htmlTableUi',array(
                     ),
                     'series' => array(
                         array('name' => 'Onderhoud', 'data' => array((int) $totaalOnderhoud), 'color'=> 'blue'),
+                        array('name' => 'Extra Kosten', 'data' => array((int) $totaalExtraKosten), 'color'=> 'orange'),
 						array('name' => 'Tanken', 'data' => array((int) $totaalTanken), 'color'=> 'navy'),
 						array('name' => 'Belasting', 'data' => array((int) $belasting), 'color'=> 'gray'),
 						array('name' => 'Verzekering', 'data' => array((int) $verzekering), 'color'=> 'darkgray')                        
@@ -160,6 +162,7 @@ $this->widget('ext.htmltableui.htmlTableUi',array(
                     ),
                     'series' => array(
                         array('name' => 'onderhoud', 'data' => array( (int) $totaalOnderhoud, 0,),'color'=> 'blue'),
+                        array('name' => 'Extra Kosten', 'data' => array((int) $totaalExtraKosten), 'color'=> 'orange'),
                         array('name' => 'tanken', 'data' => array ( (int) $totaalTanken, 0), 'color'=> 'navy'),
                         array('name' => 'belasting', 'data' => array ( (int) $belasting, 0), 'color'=> 'gray'),
                         array('name' => 'verzekering', 'data' => array ( (int) $verzekering, 0), 'color'=> 'darkgray'),

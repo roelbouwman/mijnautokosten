@@ -7,6 +7,18 @@ $this->breadcrumbs=array(
 	'Auto\'s'=>array('auto/index'),
 	'Lijst',
 );
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$.fn.yiiGridView.update('onderhoud-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 
 ?>
 <br>
@@ -19,6 +31,7 @@ $this->breadcrumbs=array(
 	'columns'=>array(
 		//'idtbl_onderhoud',
 		'datum',
+		'onderhoud',
 		'omschrijving',
 		'kosten',
 		//'tbl_auto_idtbl_auto',
