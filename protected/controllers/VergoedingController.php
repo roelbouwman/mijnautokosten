@@ -63,6 +63,7 @@ class VergoedingController extends Controller
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id
 	 */
 	public function actionCreate($id)
 	{

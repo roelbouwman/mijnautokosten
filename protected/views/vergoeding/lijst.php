@@ -23,6 +23,7 @@ $this->breadcrumbs=array(
 		'datum',
 		'omschrijving',
 		'vergoeding',
+		'terugkerendeVergoeding',
 		//'tbl_auto_idtbl_auto',
 		array(
 			'class'=>'CButtonColumn',
