@@ -58,6 +58,7 @@ Surf met je smartphone naar <code>http://www.mijnautokosten.nl</code> en de app 
 </p>
 <p>
 <b><a name="release notes"></a>Release notes</b><br>
+<i>Versie 1.4.4:</i> er kunnen nu terugkerende vergoedingen worden ingevoerd, maak een nieuwe vergoeding aan en kies voor wekelijks of maandelijks en de vergoeding verschijnt in het dashboard <br>
 <i>Versie 1.4.3:</i> een drop down bij onderhoud toegevoegd waar "onderhoud" of "exra kosten" kan worden geselecteerd, op dashboard een nieuwe staaf (extra kosten) aan diagram toegevoegd <br>
 <i>Versie 1.4.2:</i> issue #6 opgelost, fout bij alle tankbeurten <br>
 <i>Versie 1.4.1:</i> stacked bar bij grafiek vergoeding en totale kosten gemaakt, releasenotes aan index toegevoegd, knop voor openen grafiek bij brandstofprijs toegevoegd<br> 
