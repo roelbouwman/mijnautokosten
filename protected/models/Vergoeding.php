@@ -87,24 +87,65 @@ class Vergoeding extends CActiveRecord
 	 */
 	public function totaalVergoedingen($id)
 	{
+		$bedrag = Vergoeding::model()->berekenTerugkerendeVergoeding($id);
+				
 		$sum = Yii::app()->db->createCommand()
 		->select('SUM(vergoeding)')
 		->from('tbl_vergoeding')
 		->where('tbl_auto_idtbl_auto=:id', array(':id'=>$id))
 		->andWhere('terugkerendeVergoeding=\'\'')
+		->orWhere('terugkerendeVergoeding=\'eenmalig\'')
 		->queryScalar();
+				
+		$sum= $sum+$bedrag;
+		
 		return $sum;
 	}
 	
 	/**
 	 * rekent de terugkerende vergoeding uit aan de hand van de startdatum
 	 * @param integer $id
-	 * @return integer totaal
+	 * @return integer bedrag
 	 */
-	private function terugkerendeVergoeding($id)
+	private function berekenTerugkerendeVergoeding($id)
 	{
+		$bedragWekelijks = Vergoeding::model()->berekenPerInterval($id, "wekelijks");
+		$bedragMaandelijks = Vergoeding::model()->berekenPerInterval($id, "maandelijks");
+		$bedragJaarlijks = Vergoeding::model()->berekenPerInterval($id, "jaarlijks");
 		
+		return $bedragJaarlijks+$bedragMaandelijks+$bedragWekelijks;
 	}
+	
+	/**
+	 * 
+	 * Geeft per interval (wekelijks, maandelijks, jaarlijks) de totale vergoeding terug
+	 * @param integer $id
+	 * @param string $interval
+	 * @return float totaal_vergoeding
+	 */
+	private function berekenPerInterval($id, $intervalArg)
+	{
+		$criteria = new CDbCriteria();
+		$criteria->addCondition("tbl_auto_idtbl_auto=:tbl_auto_idtbl_auto");
+		$criteria->addCondition("terugkerendeVergoeding=:terugkerendeVergoeding");
+		$criteria->params = array(':tbl_auto_idtbl_auto' => $id, ':terugkerendeVergoeding'=>$intervalArg);
+		$interval = Vergoeding::model()->findAll($criteria);
+		
+		$bedrag=0.0;
+		
+		foreach($interval as $iteratie) 
+		{ 
+			$aantal = Vergoeding::model()->datumInterval($iteratie['datum'], $iteratie['einddatum'], $intervalArg);
+			//echo $aantal."*";
+			//echo $iteratie['vergoeding']."=";
+			//echo $aantal*(float)$iteratie['vergoeding']."<br>";
+			
+			$bedrag=$bedrag+((float)$aantal*(float)$iteratie['vergoeding']);
+		}
+				
+		return $bedrag;
+	}
+	
 	
 	/**
 	 * 
@@ -113,20 +154,43 @@ class Vergoeding extends CActiveRecord
 	 * @param datum $date2
 	 * @return integer interval
 	 */
-	private function datumInterval($date1, $date2)
+	private function datumInterval($date11, $date12, $intervalArg)
 	{
-		$date1 = new DateTime('2011-04-01');
-    	$date2 = new DateTime("now");
+		$date1 = new DateTime($date11);
+		if($date12=='01-01-1970'){
+			$date2 = new DateTime('now');
+		}else{
+			$date2 = new DateTime($date12);	
+		}
+				
     	$interval = $date1->diff($date2);
     	$years = $interval->format('%y');
     	$months = $interval->format('%m');
-    	$days = $interval->format('%d');
-    	if($years!=0){
-        	$ago = $years.' year(s) ago';
-    	}else{
-        	$ago = ($months == 0 ? $days.' day(s) ago' : $months.' month(s) ago');
+    	$days = $interval->format('%a');
+    	    	
+    	$weeks =0;
+    	if ($days>0)
+    	{
+    		$weeks = round($days/7);	
     	}
-    	echo $ago; 
+    	 
+    	$returnwaarde=0;
+		switch ($intervalArg) {
+		    case "wekelijks":
+		    	//echo "weken: ".$weeks."<br>";
+		        $returnwaarde=$weeks;
+		        break;
+		    case "maandelijks":
+		        //echo "maanden: ".$months."<br>";
+		    	$returnwaarde=$months;
+		        break;
+		    case "jaarlijks":
+		    	//echo "jaren: ".$years."<br>";
+		        $returnwaarde=$years;
+		        break;
+		}
+    	
+    	return $returnwaarde;
 	}
 	
 	public function beforeSave() 
