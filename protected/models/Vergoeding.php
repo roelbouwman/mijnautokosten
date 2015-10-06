@@ -88,15 +88,12 @@ class Vergoeding extends CActiveRecord
 	public function totaalVergoedingen($id)
 	{
 		$bedrag = Vergoeding::model()->berekenTerugkerendeVergoeding($id);
-				
-		$sum = Yii::app()->db->createCommand()
-		->select('SUM(vergoeding)')
-		->from('tbl_vergoeding')
-		->where('tbl_auto_idtbl_auto=:id', array(':id'=>$id))
-		->andWhere('terugkerendeVergoeding=\'\'')
-		->orWhere('terugkerendeVergoeding=\'eenmalig\'')
-		->queryScalar();
-				
+
+		//Moet eigenlijk met dBcriteria maar is (nog) niet gelukt
+		$sql = "SELECT sum(vergoeding) FROM autokosten.tbl_vergoeding where tbl_auto_idtbl_auto=".$id.
+		" and (terugkerendeVergoeding='' or terugkerendeVergoeding='eenmalig');";
+		$sum = Yii::app()->db->createCommand($sql)->queryScalar();
+		
 		$sum= $sum+$bedrag;
 		
 		return $sum;
@@ -136,10 +133,7 @@ class Vergoeding extends CActiveRecord
 		foreach($interval as $iteratie) 
 		{ 
 			$aantal = Vergoeding::model()->datumInterval($iteratie['datum'], $iteratie['einddatum'], $intervalArg);
-			//echo $aantal."*";
-			//echo $iteratie['vergoeding']."=";
-			//echo $aantal*(float)$iteratie['vergoeding']."<br>";
-			
+						
 			$bedrag=$bedrag+((float)$aantal*(float)$iteratie['vergoeding']);
 		}
 				

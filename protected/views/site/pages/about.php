@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 <br>
 <h1>Over...</h1>
 
-<p>Dit is versie 1.4.4 van de applicatie MijnAutokosten.nl</p>
+<p>Dit is versie 1.4.5 van de applicatie MijnAutokosten.nl</p>
 
 <p>
 <b>Moet ik registreren om de website te gebruiken?</b><br>

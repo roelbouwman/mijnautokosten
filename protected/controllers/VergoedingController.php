@@ -186,11 +186,12 @@ class VergoedingController extends Controller
 	 */
 	public function actionLijst($id)
 	{
-		$model = new Vergoeding();
-		$model->tbl_auto_idtbl_auto=$id;
+		//$model = new Vergoeding();
+		//$model->tbl_auto_idtbl_auto=$id;
 		
 		$criteria = new CDbCriteria();
-		$criteria->addSearchCondition('tbl_auto_idtbl_auto', $id, true);
+		$criteria->condition = "tbl_auto_idtbl_auto = $id";
+		//$criteria->addSearchCondition('tbl_auto_idtbl_auto', $id, true);
 	
 		$dataProvider=new CActiveDataProvider('Vergoeding', array(
 				'criteria'=>$criteria,
