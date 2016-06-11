@@ -87,10 +87,10 @@ class Vergoeding extends CActiveRecord
 	 */
 	public function totaalVergoedingen($id)
 	{
-		$bedrag = Vergoeding::model()->berekenTerugkerendeVergoeding($id);
+		$bedrag = (new Vergoeding)->model()->berekenTerugkerendeVergoeding($id);
 
 		//Moet eigenlijk met dBcriteria maar is (nog) niet gelukt
-		$sql = "SELECT sum(vergoeding) FROM autokosten.tbl_vergoeding where tbl_auto_idtbl_auto=".$id.
+		$sql = "SELECT sum(vergoeding) FROM tbl_vergoeding where tbl_auto_idtbl_auto=".$id.
 		" and (terugkerendeVergoeding='' or terugkerendeVergoeding='eenmalig');";
 		$sum = Yii::app()->db->createCommand($sql)->queryScalar();
 		
@@ -106,9 +106,9 @@ class Vergoeding extends CActiveRecord
 	 */
 	private function berekenTerugkerendeVergoeding($id)
 	{
-		$bedragWekelijks = Vergoeding::model()->berekenPerInterval($id, "wekelijks");
-		$bedragMaandelijks = Vergoeding::model()->berekenPerInterval($id, "maandelijks");
-		$bedragJaarlijks = Vergoeding::model()->berekenPerInterval($id, "jaarlijks");
+		$bedragWekelijks = (new Vergoeding)->model()->berekenPerInterval($id, "wekelijks");
+		$bedragMaandelijks = (new Vergoeding)->model()->berekenPerInterval($id, "maandelijks");
+		$bedragJaarlijks = (new Vergoeding)->model()->berekenPerInterval($id, "jaarlijks");
 		
 		return $bedragJaarlijks+$bedragMaandelijks+$bedragWekelijks;
 	}
@@ -126,13 +126,13 @@ class Vergoeding extends CActiveRecord
 		$criteria->addCondition("tbl_auto_idtbl_auto=:tbl_auto_idtbl_auto");
 		$criteria->addCondition("terugkerendeVergoeding=:terugkerendeVergoeding");
 		$criteria->params = array(':tbl_auto_idtbl_auto' => $id, ':terugkerendeVergoeding'=>$intervalArg);
-		$interval = Vergoeding::model()->findAll($criteria);
+		$interval = (new Vergoeding)->model()->findAll($criteria);
 		
 		$bedrag=0.0;
 		
 		foreach($interval as $iteratie) 
 		{ 
-			$aantal = Vergoeding::model()->datumInterval($iteratie['datum'], $iteratie['einddatum'], $intervalArg);
+			$aantal = (new Vergoeding)->model()->datumInterval($iteratie['datum'], $iteratie['einddatum'], $intervalArg);
 						
 			$bedrag=$bedrag+((float)$aantal*(float)$iteratie['vergoeding']);
 		}

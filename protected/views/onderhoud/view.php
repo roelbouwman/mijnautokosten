@@ -2,7 +2,7 @@
 /* @var $this OnderhoudController */
 /* @var $model Onderhoud */
 
-$autoModel=Auto::model()->findByPk($model->tbl_auto_idtbl_auto);
+$autoModel=(new Auto)->model()->findByPk($model->tbl_auto_idtbl_auto);
 
 $this->breadcrumbs=array(
 	'Auto\'s'=>array('auto/index'),

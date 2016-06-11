@@ -2,7 +2,7 @@
 /* @var $this AutoController */
 /* @var $dataProvider CActiveDataProvider */
 
-if(Auto::getUserAuto()==NULL)
+if((new Auto)->getUserAuto()==NULL)
 {
 	echo "<br /><br />";
 	echo  CHtml::button('Nieuwe Auto invoeren', array('submit' => array('auto/create'), 'class'=>'button2'));

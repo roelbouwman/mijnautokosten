@@ -36,7 +36,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'terugkerendeVergoeding'); ?>
 		<?php
-	        $terugkerendeVergoeding = CHtml::listData(Soortvergoeding::model()->findAll(), 'terugkerendeVergoeding','terugkerendeVergoeding');
+	        $terugkerendeVergoeding = CHtml::listData((new Soortvergoeding)->model()->findAll(), 'terugkerendeVergoeding','terugkerendeVergoeding');
 	        echo $form->dropDownList($model, 'terugkerendeVergoeding', $terugkerendeVergoeding);
 	    ?>
 	</div>

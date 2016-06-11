@@ -17,8 +17,8 @@ auto die je als eerste hebt ingevoerd...</font>
  <tr>
  	<td>
 		<?php 
-		$verbruik=Tankbeurt::model()->verbruik($auto->idtbl_auto);
-		$verbruikHkm=100/Tankbeurt::model()->verbruik($auto->idtbl_auto);
+		$verbruik=(new Tankbeurt)->model()->verbruik($auto->idtbl_auto);
+		$verbruikHkm=100/(new Tankbeurt)->model()->verbruik($auto->idtbl_auto);
 		
 		$this->widget('ext.egauge.EGauge',array('value'=>$verbruik, 'end'=>30));		
 		?> 	

@@ -1,7 +1,7 @@
 <?php
 /* @var $this SiteController */
 
-$loop=Auto::getBrandstofVerloop();
+$loop=(new Auto)->getBrandstofVerloop();
 
 $lPrijs=NULL;
 $datum=NULL;

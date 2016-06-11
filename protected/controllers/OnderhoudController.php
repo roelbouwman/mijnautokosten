@@ -83,7 +83,7 @@ class OnderhoudController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-			'auto'=>Auto::model()->findByPk($id),
+			'auto'=>(new Auto)->model()->findByPk($id),
 		));
 	}
 
@@ -94,7 +94,7 @@ class OnderhoudController extends Controller
 	 */
 	public function actionCreateMobiel()
 	{
-		if(Auto::getUserAuto()==NULL){
+		if((new Auto)->getUserAuto()==NULL){
 			$this->redirect(array('site/page&view=geenauto'));
 		}
 		
@@ -185,7 +185,7 @@ class OnderhoudController extends Controller
 	
 		$this->render('lijst',array(
 				'dataProvider'=>$dataProvider,
-				'auto'=>Auto::model()->findByPk($id),
+				'auto'=>(new Auto)->model()->findByPk($id),
 		));
 	}
 	
@@ -211,7 +211,7 @@ class OnderhoudController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Onderhoud::model()->findByPk($id);
+		$model=(new Onderhoud)->model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

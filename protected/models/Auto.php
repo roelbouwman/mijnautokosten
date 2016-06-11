@@ -222,7 +222,7 @@ class Auto extends CActiveRecord
 		//TODO:refactor to english
 		if(Yii::app()->user->id!=null)
 		{
-			$autoId=Auto::getUserAuto()->idtbl_auto;
+			$autoId=(new Auto)->getUserAuto()->idtbl_auto;
 			$brandstof = Yii::app()->db->createCommand()
 			->select('datum, literprijs')
 			->from('tbl_tankbeurt')
@@ -261,7 +261,7 @@ class Auto extends CActiveRecord
 			$criteria->select = '*';
 			$criteria->condition = 'tbl_user_idtbl_user=:id AND hoofdauto=:ha';
 			$criteria->params = array(':id'=>$myId, ':ha'=>1);
-			$auto = Auto::model()->find($criteria);
+			$auto = (new Auto)->model()->find($criteria);
 			
 			return $auto;
 		} else {

@@ -124,7 +124,7 @@ class User extends CActiveRecord
 		//TODO:refactor to english
 		if(Yii::app()->user->id!=null)
 		{
-			$user=User::model()->findByPk(Yii::app()->user->id);
+			$user=(new User)->model()->findByPk(Yii::app()->user->id);
 			return $user;
 		} else {
 			throw new CHttpException(404,'Er is iets vreselijk mis gegaan!');

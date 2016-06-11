@@ -10,7 +10,7 @@ class DashboardController extends Controller
 			$param_car = (int)$_POST['car_name'];
 			if($param_car!="")
 			{ 
-				Auto::setMainCar($param_car);
+				(new Auto)->setMainCar($param_car);
 			}
 		}
 		

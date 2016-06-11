@@ -64,7 +64,7 @@ class AccountForm extends CActiveRecord
 	 */
 	public function mailPassword($email)
 	{
-		$model=User::model()->find('email=:email', array(':email'=>$email));
+		$model=(new User)->model()->find('email=:email', array(':email'=>$email));
 		
 		$password=$this->generatePassword();
 		

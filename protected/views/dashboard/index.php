@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 <h1><?php echo $this->id ?></h1>
 
 <?php 
-if(Auto::getUserAuto()==NULL)
+if((new Auto)->getUserAuto()==NULL)
 {
 	echo "Er is nog geen auto aangemaakt, ga naar menu auto's en maak een auto aan.";
 }else{
 	
-	$this->renderPartial('_dashboard', array('auto'=>Auto::getUserAuto()));
+	$this->renderPartial('_dashboard', array('auto'=>(new Auto)->getUserAuto()));
 }
 ?>

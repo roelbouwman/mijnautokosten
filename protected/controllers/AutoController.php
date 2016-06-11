@@ -172,7 +172,7 @@ class AutoController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Auto::model()->findByPk($id);
+		$model=(new Auto)->model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

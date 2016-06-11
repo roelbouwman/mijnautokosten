@@ -52,7 +52,7 @@ class UserController extends Controller
 	public function actionView()
 	{
 		$this->render('view',array(
-			'model'=>User::getUser(),
+			'model'=>(new User)->getUser(),
 		));
 	}
 
@@ -146,7 +146,7 @@ class UserController extends Controller
 	 */
 	public function actionUpdate()
 	{
-		$model=User::getUser();
+		$model=(new User)->getUser();
 		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -211,7 +211,7 @@ class UserController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
+		$model=(new User)->model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

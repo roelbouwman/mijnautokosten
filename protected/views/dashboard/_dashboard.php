@@ -47,7 +47,7 @@ if($auto->verzekering==NULL||$auto->wegenbelasting==NULL){
 		 <div class="row">
 		 wijzig hoofdauto: 
 	    <?php
-	        $cars = CHtml::listData(Auto::getUserAutos(),'idtbl_auto', 'type', 'merk');
+	        $cars = CHtml::listData((new Auto)->getUserAutos(),'idtbl_auto', 'type', 'merk');
 	         
 	        echo CHtml::dropDownList('car_name', '', $cars, array('prompt'=>'Maak een keuze'));
 	        echo CHtml::submitButton("ok");
@@ -61,8 +61,8 @@ if($auto->verzekering==NULL||$auto->wegenbelasting==NULL){
         <td align="center">
             <?php
             $verbruik=new Tankbeurt();
-            $verbruik = Tankbeurt::model()->verbruik($auto->idtbl_auto);
-            $verbruikHkm = 100 / Tankbeurt::model()->verbruik($auto->idtbl_auto);
+            $verbruik = (new Tankbeurt)->model()->verbruik($auto->idtbl_auto);
+            $verbruikHkm = 100 / (new Tankbeurt)->model()->verbruik($auto->idtbl_auto);
 			
             $this->widget('ext.egauge.EGauge', array('value' => (int) round($verbruik),
                 'end' => 30,
@@ -77,20 +77,20 @@ if($auto->verzekering==NULL||$auto->wegenbelasting==NULL){
     	<td>
     	<?php 
     	//these variables are used in the highchartswidget also
-    	$totaalTanken = Tankbeurt::model()->totaalTankbeurten($auto->idtbl_auto);
-        $totaalOnderhoud = Onderhoud::model()->totaalOnderhoud($auto->idtbl_auto);
-        $totaalExtraKosten = Onderhoud::model()->totaalExtraKosten($auto->idtbl_auto);
-        $belasting = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->wegenbelasting;
-        $verzekering = Auto::getMonths($auto->afschaf, $auto->aanschaf) * $auto->verzekering;
+    	$totaalTanken = (new Tankbeurt)->model()->totaalTankbeurten($auto->idtbl_auto);
+        $totaalOnderhoud = (new Onderhoud)->model()->totaalOnderhoud($auto->idtbl_auto);
+        $totaalExtraKosten = (new Onderhoud)->model()->totaalExtraKosten($auto->idtbl_auto);
+        $belasting = (new Auto)->getMonths($auto->afschaf, $auto->aanschaf) * $auto->wegenbelasting;
+        $verzekering = (new Auto)->getMonths($auto->afschaf, $auto->aanschaf) * $auto->verzekering;
     	$knPerMaand = $totaalTanken + $totaalOnderhoud + $belasting + $verzekering;
-    	$totaalVergoeding = Vergoeding::totaalVergoedingen($auto->idtbl_auto);
+    	$totaalVergoeding = (new Vergoeding)->totaalVergoedingen($auto->idtbl_auto);
     	
 //$columnsArray = array('id','name','lastname','tel','email');
 $rowsArray = array(
-    array('aantal maanden in bezit',Auto::getMonths($auto->afschaf, $auto->aanschaf)),
-    array('aantal jaren in bezit',round(Auto::getMonths($auto->afschaf, $auto->aanschaf) / 12, 2)),
-    array('totaal gereden km',Tankbeurt::model()->aantalkm($auto->idtbl_auto)),
-    array('brandstofprijs', CHtml::button(Tankbeurt::model()->laatsteBrandstofprijs($auto->idtbl_auto), array('onclick' => '$("#dialogBrandstof").dialog("open"); return false;'))), 
+    array('aantal maanden in bezit',(new Auto)->getMonths($auto->afschaf, $auto->aanschaf)),
+    array('aantal jaren in bezit',round((new Auto)->getMonths($auto->afschaf, $auto->aanschaf) / 12, 2)),
+    array('totaal gereden km',(new Tankbeurt)->model()->aantalkm($auto->idtbl_auto)),
+    array('brandstofprijs', CHtml::button((new Tankbeurt)->model()->laatsteBrandstofprijs($auto->idtbl_auto), array('onclick' => '$("#dialogBrandstof").dialog("open"); return false;'))), 
     //array('<b>kosten per maand</b>',round($knPerMaand/Auto::getMonths($auto->afschaf, $auto->aanschaf))),  
 );
  

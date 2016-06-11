@@ -17,9 +17,9 @@
 
 	<div class="row">
 		<?php
-			$defaultCar=Auto::getUserAuto();
+			$defaultCar=(new Auto)->getUserAuto();
 			
-	        $cars = CHtml::listData(Auto::getUserAutos(),'idtbl_auto', 'type', 'merk');
+	        $cars = CHtml::listData((new Auto)->getUserAutos(),'idtbl_auto', 'type', 'merk');
 	        echo $form->dropDownList($model, 'tbl_auto_idtbl_auto', $cars, array('class'=>'button normal','options'=>array($defaultCar->idtbl_auto=>array('selected'=>'selected'))));
 	    ?>
 	    <br>
